@@ -1,0 +1,6 @@
+{
+  "social": {
+    "base_url": "http://127.0.0.1:8780",
+    "token_file": "/home/ubuntu/leo-project/channel/.local/command-key"
+  }
+}

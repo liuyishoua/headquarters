@@ -1,0 +1,2 @@
+-r requirements.txt
+-r ../channel/requirements.txt
