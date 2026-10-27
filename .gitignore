@@ -31,3 +31,23 @@ __pycache__/
 docs/*verification*.json
 docs/acceptance.json
 docs/previews/*production*
+
+# Private operator configuration and local validation records
+/docs/autonomy-browser-acceptance.json
+/docs/autonomy-model-acceptance.json
+/docs/autonomy-production-acceptance.json
+/docs/browser-acceptance.json
+/docs/model-acceptance.json
+/docs/operations-original.md
+/docs/previews/headquarters-autonomy-desktop.png
+/docs/previews/headquarters-autonomy-mobile.png
+/docs/previews/headquarters-goal.png
+/docs/previews/headquarters-mobile.png
+/docs/production-acceptance.json
+/docs/workbench-native-feedback-acceptance.json
+/docs/workbench-production-catalog.json
+/docs/workbench-production-model-acceptance.json
+/docs/workbench-production-model-task.json
+/docs/workbench-production-restart-check.json
+/docs/workbench-profile-live-acceptance.json
+/docs/workbench-profile-revision-failure.json

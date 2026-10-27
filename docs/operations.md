@@ -1,10 +1,10 @@
 # 部署维护
 
-正式入口：<https://d.58nft.net:9457/>；回环服务：`127.0.0.1:8781`。
+正式入口：<https://portal.example.com:20043/>；回环服务：`127.0.0.1:20011`。
 
 ```sh
 sudo systemctl status headquarters.service headquarters-proxy.service
-curl -fsS https://d.58nft.net:9457/healthz
+curl -fsS https://portal.example.com:20043/healthz
 ```
 
 独立数据目录 `.local/`，权限 0700：

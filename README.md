@@ -1,5 +1,7 @@
 # headquarters
 
+> 文档中的 example.com 域名、192.0.2.* 地址、/opt/operator 路径及 20000 段端口均为示例，请按实际部署配置替换。私有账号配置与运行数据不随源码提交。
+
 [![License: PolyForm Noncommercial 1.0.0](https://img.shields.io/badge/License-PolyForm%20Noncommercial%201.0.0-orange)](LICENSE)
 
 独立运行的业务目标指挥部。Multica 提供原生规划和项目任务记录；总部向社交工作台提交业务任务，
@@ -9,7 +11,7 @@
 
 以下为临时演示环境截图，使用虚构业务目标和账号。
 
-![业务目标管理](docs/previews/headquarters-goal.png)
+业务目标管理（本地资料）
 
 ## 本机启动
 
@@ -23,7 +25,7 @@ python3 -m venv .venv
 .venv/bin/python -m headquarters
 ```
 
-打开 **http://127.0.0.1:8781**。首次启动生成独立访问密码，保存在 `.local/admin-password`。
+打开 **http://127.0.0.1:20011**。首次启动生成独立访问密码，保存在 `.local/admin-password`。
 初始目标和账号为空；配置 Multica、Channel 留痕连接与工作台业务接口，再为目标选择账号权限。按 Ctrl+C 停止。
 本项目没有 `--demo` 参数；隔离验收使用测试中的临时存储与模拟连接。
 
@@ -75,7 +77,7 @@ node --check headquarters/static/app.js
 
 - `headquarters/`：业务目标、资源、阶段、指令台账和管理界面。
 - `tests/`、`scripts/`：隔离验证工具；`deploy/`：部署示例。
-- `docs/`：架构、API、运维及 [完整功能说明](docs/operations-original.md)。
+- `docs/`：架构、API、运维及 完整功能说明（本地资料）。
 
 ## 使用许可
 
