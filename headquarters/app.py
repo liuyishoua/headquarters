@@ -1,10 +1,12 @@
 import os
 import secrets
 import time
-from flask import Flask, jsonify, redirect, request, session
+from flask import Flask, jsonify, redirect, request, session, send_file
 from werkzeug.exceptions import HTTPException
 from werkzeug.security import check_password_hash, generate_password_hash
 from .core import Headquarters, Problem
+from .autonomy import AutonomyStore, AutonomyError
+from .capabilities import CapabilityDirectory
 
 
 def private_file(path, value):
@@ -15,16 +17,23 @@ def private_file(path, value):
     path.chmod(0o600)
 
 
-def create_app(directory, clients, origin='', auth=True, background=False):
+def create_app(directory, clients, origin='', auth=True, background=False, autonomy=None, autonomy_factory=None):
     hq = Headquarters(directory, clients)
+    directory_adapter = CapabilityDirectory(hq)
+    autonomy = autonomy or (autonomy_factory(directory, directory_adapter) if autonomy_factory else
+        AutonomyStore(directory, capability_provider=directory_adapter, executor=directory_adapter.execute,
+            poller=directory_adapter.poll, canceller=directory_adapter.cancel))
     private_file(hq.directory / 'session-key', secrets.token_hex(32))
     private_file(hq.directory / 'admin-password', secrets.token_urlsafe(24))
     password_hash = generate_password_hash((hq.directory / 'admin-password').read_text().strip())
     app = Flask(__name__, static_folder='static')
+    from .page_assets import install_pages
+    install_pages(app, {'index.html','login.html','automation.html'})
     app.config.update(SECRET_KEY=(hq.directory / 'session-key').read_text(), SESSION_COOKIE_NAME='headquarters_console',
         SESSION_COOKIE_SECURE=origin.startswith('https:'), SESSION_COOKIE_HTTPONLY=True, SESSION_COOKIE_SAMESITE='Strict',
         MAX_CONTENT_LENGTH=128 * 1024, PERMANENT_SESSION_LIFETIME=43200)
     app.extensions['headquarters'] = hq
+    app.extensions['autonomy'] = autonomy
     attempts = {}
 
     @app.before_request
@@ -53,6 +62,8 @@ def create_app(directory, clients, origin='', auth=True, background=False):
     def error(exc):
         if isinstance(exc, Problem):
             return jsonify(error=str(exc)), exc.status
+        if isinstance(exc, AutonomyError):
+            return jsonify(error=str(exc)), 400
         if isinstance(exc, LookupError):
             return jsonify(error='记录不存在'), 404
         if isinstance(exc, HTTPException):
@@ -95,6 +106,53 @@ def create_app(directory, clients, origin='', auth=True, background=False):
     def overview():
         return hq.overview()
 
+    @app.get('/api/autonomy')
+    def autonomy_overview():
+        return {'goals': autonomy.list()}
+
+    @app.get('/api/autonomy/capabilities')
+    def autonomy_capabilities():
+        return autonomy.capabilities()
+
+    @app.post('/api/autonomy')
+    def autonomy_create():
+        return autonomy.create(request.json), 201
+
+    @app.get('/api/autonomy/<goal_id>')
+    def autonomy_get(goal_id):
+        return autonomy.get(goal_id)
+
+    @app.post('/api/autonomy/<goal_id>/control')
+    def autonomy_control(goal_id):
+        return autonomy.control(goal_id, request.json.get('operation'))
+
+    @app.put('/api/autonomy/<goal_id>/grants')
+    def autonomy_grants(goal_id):
+        return autonomy.update_grants(goal_id, request.json.get('grants', []))
+
+    @app.post('/api/autonomy/<goal_id>/feedback')
+    def autonomy_feedback(goal_id):
+        note = request.json.get('note')
+        if not isinstance(note, str) or not note.strip() or len(note) > 5000:
+            raise Problem('请填写最多 5000 字的反馈')
+        autonomy.wake(goal_id, 'user_feedback', {'note': note.strip()})
+        return autonomy.get(goal_id)
+
+    @app.post('/api/autonomy/<goal_id>/confirm')
+    def autonomy_confirm(goal_id):
+        return autonomy.confirm_delivery(goal_id, request.json.get('evidence_ids', []), request.json.get('note'))
+
+    @app.get('/api/autonomy/<goal_id>/artifacts/<name>')
+    def autonomy_artifact(goal_id, name):
+        goal = autonomy.get(goal_id)
+        artifact = next((x for x in goal['evidence'] if x['kind'] == 'artifact' and x['data'].get('name') == name), None)
+        if not artifact:
+            raise LookupError()
+        path = autonomy.artifacts / goal_id / name
+        if path.parent.resolve() != (autonomy.artifacts / goal_id).resolve() or not path.is_file():
+            raise LookupError()
+        return send_file(path, as_attachment=True, download_name=name)
+
     @app.post('/api/missions')
     def create_mission():
         return hq.save_mission(request.json), 201
@@ -117,7 +175,14 @@ def create_app(directory, clients, origin='', auth=True, background=False):
 
     @app.post('/api/pause-all')
     def pause_all():
-        return hq.pause_all()
+        result = hq.pause_all()
+        paused = 0
+        for goal in autonomy.list():
+            if goal['status'] not in ('paused', 'stopped', 'completed'):
+                autonomy.control(goal['id'], 'pause')
+                paused += 1
+        result['paused'] += paused
+        return result
 
     @app.post('/api/accounts')
     def account():
@@ -133,4 +198,5 @@ def create_app(directory, clients, origin='', auth=True, background=False):
 
     if background:
         hq.start_worker()
+        autonomy.start_worker(hq.stop_event)
     return app

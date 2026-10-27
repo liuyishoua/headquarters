@@ -1,0 +1,32 @@
+{
+  "interrupted_test_projects_cancelled": [
+    {
+      "project_id": "46148a06-8624-4547-92a2-f9c5ed4bfafd",
+      "reason": "Interrupted isolated acceptance retained as cancelled audit"
+    },
+    {
+      "project_id": "3eda20f2-c233-4c9b-b0df-30d80ed631b2",
+      "reason": "Interrupted isolated acceptance retained as cancelled audit"
+    },
+    {
+      "project_id": "3849ccbc-0c11-42d4-857b-63ec250bc2e0",
+      "reason": "Interrupted isolated acceptance retained as cancelled audit"
+    },
+    {
+      "project_id": "4c6df541-f804-4859-a55b-ede2cc7f3a86",
+      "reason": "Interrupted isolated acceptance retained as cancelled audit"
+    },
+    {
+      "project_id": "4734983e-0de1-48e5-8126-6ba03cdeb05c",
+      "reason": "Interrupted isolated acceptance retained as cancelled audit"
+    },
+    {
+      "project_id": "da9240a3-8397-4e76-81a2-92125d441890",
+      "reason": "Interrupted isolated acceptance retained as cancelled audit"
+    }
+  ],
+  "cleanup_unconfirmed": [],
+  "isolated_test_agent_archived": true,
+  "production_identities_changed": false,
+  "temporary_workbench_services_stopped": true
+}

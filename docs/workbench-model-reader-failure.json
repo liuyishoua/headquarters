@@ -1,0 +1,36 @@
+{
+  "scope": "Native model context failure; no real social writes",
+  "failure": "Current execution node did not expose configured narrow MCP task reader; blocked replies rejected",
+  "tasks": [
+    {
+      "id": "57b10e3f81ea4072b03896e748b9fc99",
+      "request_id": "fda1fd3164f24c3b89bbbee2bb09e678",
+      "payload": "{\"request_id\": \"fda1fd3164f24c3b89bbbee2bb09e678\", \"goal_id\": \"ff860fbdd17a41acb02496ef494bba01\", \"project_id\": \"4c6df541-f804-4859-a55b-ede2cc7f3a86\", \"action_id\": \"fda1fd3164f24c3b89bbbee2bb09e678\", \"account_id\": \"demo-seller\", \"operation\": \"message.read\", \"input\": {\"conversation_id\": \"900002\"}, \"authorization_revision\": 0, \"origin\": \"headquarters\"}",
+      "fingerprint": "7500151ba6dd567f15fa661c701c36902a714b9000d57e606df0051f700bccd3",
+      "status": "succeeded",
+      "job_id": "323d678c21b84c4f97c6f53cc0cce719",
+      "result": "{\"source\": \"demo_platform_job\", \"job_id\": \"323d678c21b84c4f97c6f53cc0cce719\", \"evidence\": {\"source\": \"authenticated_workbench_cache\", \"items\": [{\"id\": \"demo-900002-2\", \"sender_id\": \"demo-seller\", \"outgoing\": true, \"kind\": \"text\", \"text\": \"\\u4f60\\u597d\\uff0c\\u8fd8\\u5728\\u7684\\uff0c\\u6b22\\u8fce\\u54a8\\u8be2\\uff5e\", \"images\": [], \"timestamp\": 1791731622.3246615, \"cid\": \"900002\"}, {\"id\": \"demo-900002-1\", \"sender_id\": \"800002\", \"outgoing\": false, \"kind\": \"text\", \"text\": \"\\u4f60\\u597d\\uff0c\\u6b21\\u5361\\u53ef\\u4ee5\\u8f6c\\u7ed9\\u522b\\u4eba\\u7528\\u5417\\uff1f\", \"images\": [], \"timestamp\": 1791731502.3246586, \"cid\": \"900002\"}]}, \"reason\": null, \"platform_action_performed\": false}",
+      "created": 1791732112.8675966
+    },
+    {
+      "id": "ce7ca8daac0441eba585e912f372b948",
+      "request_id": "fc6fc04d4a2f4814869a5e40f76d964d",
+      "payload": "{\"request_id\": \"fc6fc04d4a2f4814869a5e40f76d964d\", \"goal_id\": \"ff860fbdd17a41acb02496ef494bba01\", \"project_id\": \"4c6df541-f804-4859-a55b-ede2cc7f3a86\", \"action_id\": \"fc6fc04d4a2f4814869a5e40f76d964d\", \"account_id\": \"demo-seller\", \"operation\": \"reply.draft\", \"input\": {\"conversation_id\": \"900002\", \"text\": \"\\u8bf7\\u9488\\u5bf9\\u4e70\\u5bb6\\u8be2\\u95ee\\u201c\\u6b21\\u5361\\u53ef\\u4ee5\\u8f6c\\u7ed9\\u522b\\u4eba\\u7528\\u5417\\uff1f\\u201d\\u8d77\\u8349\\u7b80\\u77ed\\u56de\\u590d\\u3002\\u4e25\\u683c\\u9075\\u5b88\\u5df2\\u77e5\\u5546\\u54c1\\u4e8b\\u5b9e\\u4e0e\\u4ef7\\u683c\\uff0c\\u4e0d\\u7f16\\u9020\\u8f6c\\u8ba9\\u89c4\\u5219\\u3001\\u4f18\\u60e0\\u6216\\u627f\\u8bfa\\uff1b\\u82e5\\u4e8b\\u5b9e\\u4e0d\\u8db3\\uff0c\\u8bf7\\u660e\\u786e\\u9700\\u8981\\u786e\\u8ba4\\u3002\\u4ec5\\u8d77\\u8349\\uff0c\\u4e0d\\u53d1\\u9001\\u3002\"}, \"authorization_revision\": 0, \"origin\": \"headquarters\"}",
+      "fingerprint": "0c8a6cc975c52c002adfe44bc78c22d2b0df5fad278ddc9db4e2570769e8e074",
+      "status": "failed",
+      "job_id": "channel:19b4641a-841a-49c7-bb7f-0f082c485d9f",
+      "result": "{\"source\": \"channel_model_draft\", \"reason\": \"\\u6a21\\u578b\\u5b8c\\u6210\\u4f46\\u7f3a\\u5c11\\u53ef\\u7528\\u4ea7\\u7269\", \"model_status\": \"needs_context\", \"channel_event_id\": \"19b4641a-841a-49c7-bb7f-0f082c485d9f\", \"evidence\": {\"account_id\": \"demo-seller\", \"batch_id\": \"24e5a5f7-5070-4eeb-9b0d-5e9900b9a774\", \"created\": 1791732145.4057224, \"error\": \"\", \"event_id\": \"19b4641a-841a-49c7-bb7f-0f082c485d9f\", \"issue_id\": \"01a12b8e-b8a6-73db-895d-50f3c91b34e0\", \"message_id\": \"business-fc6fc04d4a2f4814869a5e40f76d964d\", \"output\": {\"requires_human\": true, \"structured\": {\"reason\": \"\\u5f53\\u524d\\u672a\\u63d0\\u4f9b read_assigned_analysis \\u5de5\\u5177\\uff0c\\u65e0\\u6cd5\\u8bfb\\u53d6\\u5df2\\u5206\\u914d\\u4efb\\u52a1\\uff1b\\u89d2\\u8272\\u6743\\u9650\\u7981\\u6b62\\u4f7f\\u7528 shell \\u6216\\u5176\\u4ed6\\u65b9\\u5f0f\\u66ff\\u4ee3\\u8bfb\\u53d6\\u3002\", \"status\": \"needs_context\"}, \"text\": \"{\\\"status\\\":\\\"needs_context\\\",\\\"reason\\\":\\\"\\u5f53\\u524d\\u672a\\u63d0\\u4f9b read_assigned_analysis \\u5de5\\u5177\\uff0c\\u65e0\\u6cd5\\u8bfb\\u53d6\\u5df2\\u5206\\u914d\\u4efb\\u52a1\\uff1b\\u89d2\\u8272\\u6743\\u9650\\u7981\\u6b62\\u4f7f\\u7528 shell \\u6216\\u5176\\u4ed6\\u65b9\\u5f0f\\u66ff\\u4ee3\\u8bfb\\u53d6\\u3002\\\"}\"}, \"source_id\": \"synthetic-business\", \"state\": \"succeeded\", \"task_id\": \"01a12b8e-b8bc-777a-8f20-3000585e1b24\", \"thread_id\": \"0d5aeae4-4d5b-4cd8-a411-b849f2da827b\"}, \"platform_action_performed\": false}",
+      "created": 1791732135.524142
+    },
+    {
+      "id": "a15c444ec4eb4d4599aa661247a4b0cf",
+      "request_id": "f55c184e7dd84a06926e257f0426bfec",
+      "payload": "{\"request_id\": \"f55c184e7dd84a06926e257f0426bfec\", \"goal_id\": \"ff860fbdd17a41acb02496ef494bba01\", \"project_id\": \"4c6df541-f804-4859-a55b-ede2cc7f3a86\", \"action_id\": \"f55c184e7dd84a06926e257f0426bfec\", \"account_id\": \"demo-seller\", \"operation\": \"reply.draft\", \"input\": {\"conversation_id\": \"900002\", \"text\": \"\\u672c\\u6b21\\u8d77\\u8349\\u7684\\u5b8c\\u6574\\u5df2\\u77e5\\u4e0a\\u4e0b\\u6587\\uff1a\\u4e70\\u5bb6\\u95ee\\u201c\\u4f60\\u597d\\uff0c\\u6b21\\u5361\\u53ef\\u4ee5\\u8f6c\\u7ed9\\u522b\\u4eba\\u7528\\u5417\\uff1f\\u201d\\uff0c\\u5356\\u5bb6\\u6b64\\u524d\\u56de\\u590d\\u201c\\u4f60\\u597d\\uff0c\\u8fd8\\u5728\\u7684\\uff0c\\u6b22\\u8fce\\u54a8\\u8be2\\uff5e\\u201d\\u3002\\u5c1a\\u672a\\u89c2\\u5bdf\\u5230\\u8f6c\\u8ba9\\u89c4\\u5219\\u6216\\u5177\\u4f53\\u4ef7\\u683c\\u3002\\u8bf7\\u6839\\u636e\\u8fd9\\u4e9b\\u5df2\\u77e5\\u4e8b\\u5b9e\\u8d77\\u8349\\u4e00\\u53e5\\u7b80\\u77ed\\u56de\\u590d\\uff0c\\u8bf4\\u660e\\u6b21\\u5361\\u8f6c\\u8ba9\\u4f7f\\u7528\\u89c4\\u5219\\u9700\\u8981\\u786e\\u8ba4\\uff1b\\u4e0d\\u8981\\u7f16\\u9020\\u4ef7\\u683c\\u3001\\u89c4\\u5219\\u3001\\u4f18\\u60e0\\u6216\\u627f\\u8bfa\\u3002\\u8bf7\\u8fd4\\u56de\\u5b9e\\u9645\\u56de\\u590d\\u8349\\u7a3f\\uff0c\\u4ec5\\u8d77\\u8349\\uff0c\\u4e0d\\u53d1\\u9001\\u3002\"}, \"authorization_revision\": 0, \"origin\": \"headquarters\"}",
+      "fingerprint": "8de1a83e7636b3252caff071ed52bf80f95a5f77be97d8a5b497f27dff814c52",
+      "status": "failed",
+      "job_id": "channel:6b3b6dd5-a679-4b91-852f-dd1cae93b6ff",
+      "result": "{\"source\": \"channel_model_draft\", \"reason\": \"\\u6a21\\u578b\\u672a\\u8fd4\\u56de\\u53ef\\u7528\\u8349\\u7a3f\", \"platform_action_performed\": false}",
+      "created": 1791732179.479592
+    }
+  ]
+}

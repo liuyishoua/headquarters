@@ -39,7 +39,7 @@ def main():
                 browser = p.chromium.launch(headless=True)
                 page = browser.new_page(viewport={'width':1440,'height':1100})
                 page.on('pageerror', lambda e:errors.append(str(e)))
-                page.goto('http://127.0.0.1:18873/'); page.get_by_role('heading', name='先确定想完成什么。').wait_for()
+                page.goto('http://127.0.0.1:18873/'); page.locator('[data-tab=missions]').click(); page.get_by_role('heading', name='先确定想完成什么。').wait_for()
                 # Register resources through the actual UI.
                 page.locator('[data-tab=accounts]').click()
                 for key, source in [('east','xianyu'),('west','weibo')]:
@@ -48,7 +48,7 @@ def main():
                     form.locator('[name=name]').fill('合成账号-'+key); form.locator('[name=account_id]').fill('synthetic-'+key)
                     form.locator('[name=hour_start]').fill('0'); form.locator('[name=hour_end]').fill('24')
                     form.get_by_role('button', name='保存执行账号').click(); page.locator('#modal').wait_for(state='hidden')
-                page.get_by_role('button', name='新建目标 ＋').click()
+                page.locator('[data-tab=missions]').click(); page.locator('#create-mission').click()
                 form = page.locator('#mission-form'); form.locator('[name=name]').fill('多平台客服与跟进 · 合成验收')
                 form.locator('[name=objective]').fill('协调两个虚构平台账号处理咨询，验收客户需求后进入跟进阶段。')
                 form.locator('[name=knowledge]').fill('虚构商品支持包邮；不得承诺未提供的优惠。')

@@ -1,0 +1,14 @@
+[
+  {
+    "report": "workbench-profile-live-acceptance.json",
+    "status": "completed",
+    "same_action_count": true,
+    "same_project": true
+  },
+  {
+    "report": "workbench-production-model-acceptance.json",
+    "status": "completed",
+    "same_action_count": true,
+    "same_project": true
+  }
+]

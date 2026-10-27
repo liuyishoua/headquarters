@@ -1,0 +1,2872 @@
+{
+  "scope": "Production Leo model-context read-only verification from actual profile facts; no social or memory writes",
+  "goal": {
+    "actions": [
+      {
+        "arguments": {},
+        "created": 1791732281.678764,
+        "fingerprint": "07a7452e0dcce0e4193bdabd68e097cb05697e169740d41cbc45908d614c6fe1",
+        "id": "e367fa0f602a46ee8ceff774836d52f8",
+        "kind": "read_brief",
+        "rationale": "目标要求首先读取简报；当前没有观察记录，需取得可引用的简报证据后再规划已授权的 content.analyze。",
+        "result": {
+          "content": "{\"source\": \"authenticated_platform_sdk\", \"coverage\": \"current_authenticated_profile\", \"profile\": {\"avatar\": null, \"desc\": \"无人扶我青云志，我自踏雪至山巅\", \"gender\": 0, \"ip_location\": null, \"nickname\": \"leo\", \"user_id\": \"5cd2ac18000000001200cf4b\"}}",
+          "name": "goal_brief",
+          "observation_id": "b4be418ee916426b90dba232b5cc7e06",
+          "source": "user_goal_brief"
+        },
+        "run_id": "5ea8d740f7a1428e870b777018f0d7cd",
+        "status": "completed",
+        "summary": "读取目标简报，观察所提供的 Leo 真实认证主页资料。",
+        "updated": 1791732281.7271802
+      },
+      {
+        "arguments": {
+          "input": {
+            "agent_id": "da72f33e-cac4-4ff0-a99d-d415219f3efc",
+            "text": "请根据以下已观察的实际主页资料，返回简洁、事实性的中文主页摘要。来源为 authenticated_platform_sdk，覆盖范围为 current_authenticated_profile（authenticated profile）；nickname：leo；user_id：5cd2ac18000000001200cf4b；desc：无人扶我青云志，我自踏雪至山巅；gender 原始值：0，其含义未知；avatar：null；ip_location：null。空值对应信息标记为未知，不推断性别、所在地、身份、性格或经历。权限仅限读取本次分配的 Multica issue 01a12b90-7373-7421-8c42-7016a05b9e39 及其触发上下文；禁止社交写入、访问其他账号、修改 persona 或 memory，禁止生成任何虚构经历。仅使用上述实际资料事实，不调用其他操作。"
+          },
+          "operation": "content.analyze",
+          "resource_id": "bc746c0e55f65f5f04a9be1e"
+        },
+        "created": 1791732294.667976,
+        "fingerprint": "54a980b5a80bd3b72d99530d1db33ecbfccc2b356b03aecf51509457349fb5a7",
+        "id": "506fa91517524a54ac397b6b5fd3f731",
+        "kind": "business_task",
+        "rationale": "read_brief 已完成，观察 b4be418ee916426b90dba232b5cc7e06 提供了真实认证主页资料；下一步应取得实际模型结果，再规划摘要文件。",
+        "result": {
+          "business_task_id": "ba62d292-280a-49ea-aba4-3d55ed48ed95",
+          "evidence": {
+            "error": "",
+            "result": {
+              "coverage": "analysis_draft_not_platform_action",
+              "data": {
+                "channel_event_id": "36083885-a11f-49fd-be38-a091c205619b",
+                "output": {
+                  "requires_human": true,
+                  "structured": {
+                    "labels": [],
+                    "reply": "主页昵称为 leo，简介为“无人扶我青云志，我自踏雪至山巅”。性别、头像和所在地信息未知。",
+                    "requires_human": true,
+                    "summary": "依据已观察的认证主页资料整理摘要；未推断未知信息。"
+                  },
+                  "text": "{\"reply\":\"主页昵称为 leo，简介为“无人扶我青云志，我自踏雪至山巅”。性别、头像和所在地信息未知。\",\"summary\":\"依据已观察的认证主页资料整理摘要；未推断未知信息。\",\"labels\":[],\"requires_human\":true}"
+                }
+              },
+              "source": "model_intermediate"
+            },
+            "source": "authenticated_workbench_business_task",
+            "task_id": "ba62d292-280a-49ea-aba4-3d55ed48ed95"
+          },
+          "operation": "content.analyze",
+          "pending": false,
+          "resource_id": "bc746c0e55f65f5f04a9be1e",
+          "status": "executed",
+          "task_state": "succeeded",
+          "workbench_id": "xhs"
+        },
+        "run_id": "5ea8d740f7a1428e870b777018f0d7cd",
+        "status": "completed",
+        "summary": "调用 Leo 账号获授权的 content.analyze，生成简洁、事实性的中文主页摘要。",
+        "updated": 1791732320.6633399
+      },
+      {
+        "arguments": {
+          "content": "# leo 真实主页来源摘要\n\n资料来源：authenticated_platform_sdk；覆盖范围：current_authenticated_profile（authenticated profile）。简报观察 ID：b4be418ee916426b90dba232b5cc7e06。\n\n- 昵称：leo\n- 用户 ID：5cd2ac18000000001200cf4b\n- 简介：无人扶我青云志，我自踏雪至山巅\n- 性别：未知；原始 gender 值为 0，含义未知。\n- 头像：未知；原始 avatar 为 null。\n- IP 所在地：未知；原始 ip_location 为 null。\n\n实际模型摘要：主页昵称为 leo，简介为“无人扶我青云志，我自踏雪至山巅”。性别、头像和所在地信息未知。\n\n模型结果观察 ID：f42d2feeb9404e3d98f90a656f2975be；任务 ID：ba62d292-280a-49ea-aba4-3d55ed48ed95。结果为分析草稿，标记 requires_human=true，仅采用与简报一致的事实，不作为平台写入证据。未推断身份、性格或经历。\n",
+          "evidence_ids": [
+            "b4be418ee916426b90dba232b5cc7e06",
+            "f42d2feeb9404e3d98f90a656f2975be"
+          ],
+          "name": "leo-profile.md"
+        },
+        "created": 1791732342.1886864,
+        "fingerprint": "b8c8bf9fcecde04d1169c9a9e02467e181241ddba8d2d63fd3d09f48858c455e",
+        "id": "769a0696dd364700b2fcd995972e5fdd",
+        "kind": "write_artifact",
+        "rationale": "简报读取和 content.analyze 均已成功，实际模型结果已返回；下一步应生成有证据引用的文件，待产物验证后再完成。",
+        "result": {
+          "error": "Artifact must cite observed sources from this goal"
+        },
+        "run_id": "5ea8d740f7a1428e870b777018f0d7cd",
+        "status": "failed",
+        "summary": "创建 leo-profile.md，记录真实主页事实与实际模型摘要。",
+        "updated": 1791732342.24688
+      },
+      {
+        "arguments": {
+          "content": "# leo 真实主页来源摘要\n\n来源：authenticated_platform_sdk。\n覆盖范围：current_authenticated_profile（authenticated profile）。\n来源证据：简报观察 b4be418ee916426b90dba232b5cc7e06。\n\n- 昵称：leo\n- 用户 ID：5cd2ac18000000001200cf4b\n- 简介：无人扶我青云志，我自踏雪至山巅\n- 性别：未知；原始 gender 为 0，含义未知。\n- 头像：未知；原始 avatar 为 null。\n- IP 所在地：未知；原始 ip_location 为 null。\n\n实际模型返回的可用事实摘要：主页昵称为 leo，简介为“无人扶我青云志，我自踏雪至山巅”。性别、头像和所在地信息未知。\n\n模型结果记录：观察 f42d2feeb9404e3d98f90a656f2975be，任务 ba62d292-280a-49ea-aba4-3d55ed48ed95。该结果为分析草稿，标记 requires_human=true；上述事实均由简报证据支持。未推断身份、性格或经历。\n",
+          "evidence_ids": [
+            "b4be418ee916426b90dba232b5cc7e06"
+          ],
+          "name": "leo-profile.md"
+        },
+        "created": 1791732365.7990718,
+        "fingerprint": "7ea595a170a2c9ef8db58fe516a21f711e230e1bc07ed1b5a4d162ba3353baa7",
+        "id": "983de80b7f65413f89cdda1056717389",
+        "kind": "write_artifact",
+        "rationale": "简报读取与模型分析均已成功。上次写入引用了不符合来源类型要求的 business_intermediate 观察；本次仅以已观察的 brief 作为产物证据，纳入与简报一致的实际模型摘要，写入后再检查产物。",
+        "result": {
+          "content": "# leo 真实主页来源摘要\n\n来源：authenticated_platform_sdk。\n覆盖范围：current_authenticated_profile（authenticated profile）。\n来源证据：简报观察 b4be418ee916426b90dba232b5cc7e06。\n\n- 昵称：leo\n- 用户 ID：5cd2ac18000000001200cf4b\n- 简介：无人扶我青云志，我自踏雪至山巅\n- 性别：未知；原始 gender 为 0，含义未知。\n- 头像：未知；原始 avatar 为 null。\n- IP 所在地：未知；原始 ip_location 为 null。\n\n实际模型返回的可用事实摘要：主页昵称为 leo，简介为“无人扶我青云志，我自踏雪至山巅”。性别、头像和所在地信息未知。\n\n模型结果记录：观察 f42d2feeb9404e3d98f90a656f2975be，任务 ba62d292-280a-49ea-aba4-3d55ed48ed95。该结果为分析草稿，标记 requires_human=true；上述事实均由简报证据支持。未推断身份、性格或经历。\n",
+          "delivery": "local_artifact",
+          "draft": true,
+          "name": "leo-profile.md",
+          "observation_id": "e01942704654456c8457283665bf5563",
+          "sha256": "6c4f14ac5cc555a522656c963d8ddc4419798e44059627106b8ff383f13a0a04",
+          "source_evidence_ids": [
+            "b4be418ee916426b90dba232b5cc7e06"
+          ]
+        },
+        "run_id": "5ea8d740f7a1428e870b777018f0d7cd",
+        "status": "completed",
+        "summary": "修正证据引用，创建 leo-profile.md 真实主页摘要。",
+        "updated": 1791732365.879081
+      },
+      {
+        "arguments": {
+          "evidence_ids": [
+            "e01942704654456c8457283665bf5563"
+          ]
+        },
+        "created": 1791732378.845931,
+        "fingerprint": "133cee20ef842817893c27b1882c1b5af1f634ee236aff3d2b7e463f68999a63",
+        "id": "1045a62834144fcea890ff6ff794f88b",
+        "kind": "complete",
+        "rationale": "实际模型结果已返回，leo-profile.md 已成功写入并获得 artifact 观察。核对观察中的文件名与内容，满足包含 leo 和 authenticated profile 的产物检查；文件引用简报证据，仅采用一致的事实并将未知信息标为未知。",
+        "result": {
+          "delivery": "local_artifact",
+          "evidence_ids": [
+            "e01942704654456c8457283665bf5563"
+          ],
+          "verified_criteria": [
+            "真实主页来源摘要"
+          ]
+        },
+        "run_id": "5ea8d740f7a1428e870b777018f0d7cd",
+        "status": "completed",
+        "summary": "完成 Leo 真实主页摘要产物验收。",
+        "updated": 1791732378.8875344
+      }
+    ],
+    "agent_id": "f7a12a56-be3b-4889-85de-613254eea81f",
+    "artifact_checks": {
+      "真实主页来源摘要": {
+        "contains": [
+          "leo",
+          "authenticated profile"
+        ],
+        "name": "leo-profile.md"
+      }
+    },
+    "blocker": "",
+    "capabilities": {
+      "actions": [
+        "read_brief",
+        "read_fixture",
+        "write_artifact",
+        "wait",
+        "complete",
+        "business_task"
+      ],
+      "agents": [
+        {
+          "id": "f7a12a56-be3b-4889-85de-613254eea81f",
+          "name": "目标指挥员 · 规划"
+        }
+      ],
+      "business_tasks": true,
+      "execution_agents": [],
+      "execution_mode": "workbench_business_tasks",
+      "fixtures": [],
+      "limitation": "Only listed online operations with exact goal grants and target scope may execute; receipts do not prove a sale.",
+      "multica_available": true,
+      "planner_available": true,
+      "resources": [
+        {
+          "account_id": "1",
+          "channel_account_id": "user:1:account:5cd2ac18000000001200cf4b",
+          "channel_id": "workbench",
+          "channel_source_id": "xhs",
+          "id": "bc746c0e55f65f5f04a9be1e",
+          "name": "leo",
+          "operations": [
+            {
+              "available": true,
+              "id": "comment.reply",
+              "input_schema": {
+                "properties": {
+                  "note_id": {
+                    "type": "string"
+                  },
+                  "target_comment_id": {
+                    "type": "string"
+                  },
+                  "text": {
+                    "maxLength": 2000,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "note_id",
+                  "target_comment_id",
+                  "text"
+                ],
+                "type": "object"
+              },
+              "label": "comment.reply",
+              "reason": ""
+            },
+            {
+              "available": true,
+              "id": "content.analyze",
+              "input_schema": {
+                "properties": {
+                  "agent_id": {
+                    "type": "string"
+                  },
+                  "text": {
+                    "maxLength": 16000,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "agent_id",
+                  "text"
+                ],
+                "type": "object"
+              },
+              "label": "content.analyze",
+              "reason": ""
+            },
+            {
+              "available": false,
+              "id": "content.publish",
+              "input_schema": {
+                "anyOf": [
+                  {
+                    "required": [
+                      "publish_job_id"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "draft_id"
+                    ]
+                  }
+                ],
+                "properties": {
+                  "draft_id": {
+                    "type": "integer"
+                  },
+                  "publish_job_id": {
+                    "type": "integer"
+                  }
+                },
+                "type": "object"
+              },
+              "label": "content.publish",
+              "reason": "该PC账号尚无同owner同身份可用Creator会话"
+            },
+            {
+              "available": true,
+              "id": "content.read",
+              "input_schema": {
+                "properties": {},
+                "type": "object"
+              },
+              "label": "content.read",
+              "reason": ""
+            },
+            {
+              "available": true,
+              "id": "conversation.read",
+              "input_schema": {
+                "properties": {},
+                "type": "object"
+              },
+              "label": "conversation.read",
+              "reason": ""
+            },
+            {
+              "available": false,
+              "id": "dm.initiate",
+              "input_schema": {
+                "properties": {},
+                "type": "object"
+              },
+              "label": "dm.initiate",
+              "reason": "没有受支持的主动私信入口"
+            },
+            {
+              "available": false,
+              "id": "dm.reply",
+              "input_schema": {
+                "properties": {
+                  "conversation_id": {
+                    "type": "string"
+                  },
+                  "instruction": {
+                    "maxLength": 2000,
+                    "type": "string"
+                  },
+                  "message_id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "conversation_id",
+                  "message_id"
+                ],
+                "type": "object"
+              },
+              "label": "dm.reply",
+              "reason": "私信WebSocket尚未在线监听：syncing"
+            },
+            {
+              "available": true,
+              "id": "draft.create",
+              "input_schema": {
+                "properties": {
+                  "body": {
+                    "maxLength": 16000,
+                    "type": "string"
+                  },
+                  "title": {
+                    "maxLength": 256,
+                    "type": "string"
+                  },
+                  "uploaded_asset_ids": {
+                    "items": {
+                      "type": "integer"
+                    },
+                    "type": "array"
+                  }
+                },
+                "required": [
+                  "title",
+                  "body"
+                ],
+                "type": "object"
+              },
+              "label": "draft.create",
+              "reason": ""
+            },
+            {
+              "available": true,
+              "id": "material.read",
+              "input_schema": {
+                "properties": {
+                  "publish_job_id": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "publish_job_id"
+                ],
+                "type": "object"
+              },
+              "label": "material.read",
+              "reason": ""
+            },
+            {
+              "available": true,
+              "id": "message.read",
+              "input_schema": {
+                "properties": {
+                  "conversation_id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "conversation_id"
+                ],
+                "type": "object"
+              },
+              "label": "message.read",
+              "reason": ""
+            },
+            {
+              "available": true,
+              "id": "profile.read",
+              "input_schema": {
+                "properties": {},
+                "type": "object"
+              },
+              "label": "profile.read",
+              "reason": ""
+            },
+            {
+              "available": true,
+              "id": "public.search",
+              "input_schema": {
+                "properties": {
+                  "keyword": {
+                    "maxLength": 200,
+                    "type": "string"
+                  },
+                  "page": {
+                    "maximum": 20,
+                    "minimum": 1,
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "keyword"
+                ],
+                "type": "object"
+              },
+              "label": "public.search",
+              "reason": ""
+            },
+            {
+              "available": false,
+              "id": "video.publish",
+              "input_schema": {
+                "properties": {},
+                "type": "object"
+              },
+              "label": "video.publish",
+              "reason": "视频发布未实现"
+            }
+          ],
+          "scope_options": {
+            "conversation_ids": [
+              {
+                "id": "52d8c541b4c4d60e6c867480",
+                "label": "52d8c541b4c4d60e6c867480"
+              },
+              {
+                "id": "567220d30bf90c168cce9d25",
+                "label": "567220d30bf90c168cce9d25"
+              },
+              {
+                "id": "57e5dc0482ec396937c4590e",
+                "label": "57e5dc0482ec396937c4590e"
+              },
+              {
+                "id": "58638c5a82ec3957e677cec9",
+                "label": "58638c5a82ec3957e677cec9"
+              },
+              {
+                "id": "59055d216a6a690ae983ead7",
+                "label": "59055d216a6a690ae983ead7"
+              },
+              {
+                "id": "5953914382ec395e2cd7ebe9",
+                "label": "5953914382ec395e2cd7ebe9"
+              },
+              {
+                "id": "5960f43450c4b4108cc7a2d7",
+                "label": "5960f43450c4b4108cc7a2d7"
+              },
+              {
+                "id": "5970639e5e87e712c7604b93",
+                "label": "5970639e5e87e712c7604b93"
+              },
+              {
+                "id": "597aed575e87e75a89dbfa35",
+                "label": "597aed575e87e75a89dbfa35"
+              },
+              {
+                "id": "5a38da7911be1079d575a3de",
+                "label": "5a38da7911be1079d575a3de"
+              },
+              {
+                "id": "5a4b564911be101ef8e23269",
+                "label": "5a4b564911be101ef8e23269"
+              },
+              {
+                "id": "5a697e2ee8ac2b06169cc389",
+                "label": "5a697e2ee8ac2b06169cc389"
+              },
+              {
+                "id": "5a77ffc74eacab253d956c4e",
+                "label": "5a77ffc74eacab253d956c4e"
+              },
+              {
+                "id": "5b02aad6f7e8b90cfbe541fb",
+                "label": "5b02aad6f7e8b90cfbe541fb"
+              },
+              {
+                "id": "5b11393d4eacab26aaa0c491",
+                "label": "5b11393d4eacab26aaa0c491"
+              },
+              {
+                "id": "5b38d3d4f7e8b905549e241b",
+                "label": "5b38d3d4f7e8b905549e241b"
+              },
+              {
+                "id": "5b48932a11be101303819c62",
+                "label": "5b48932a11be101303819c62"
+              },
+              {
+                "id": "5b59d8e94eacab67947cdb14",
+                "label": "5b59d8e94eacab67947cdb14"
+              },
+              {
+                "id": "5b7f8503acc2a100014b2746",
+                "label": "5b7f8503acc2a100014b2746"
+              },
+              {
+                "id": "5b84b6c3d24e10000169b0b1",
+                "label": "5b84b6c3d24e10000169b0b1"
+              },
+              {
+                "id": "5bdeb41864009c000178df4e",
+                "label": "5bdeb41864009c000178df4e"
+              },
+              {
+                "id": "5be7e7ad966a5500011f1e50",
+                "label": "5be7e7ad966a5500011f1e50"
+              },
+              {
+                "id": "5c52cf310000000011019013",
+                "label": "5c52cf310000000011019013"
+              },
+              {
+                "id": "5c58142c000000001202acb5",
+                "label": "5c58142c000000001202acb5"
+              },
+              {
+                "id": "5c5e41480000000010027692",
+                "label": "5c5e41480000000010027692"
+              },
+              {
+                "id": "5c61461d0000000018011e0e",
+                "label": "5c61461d0000000018011e0e"
+              },
+              {
+                "id": "5c68efb000000000100011bf",
+                "label": "5c68efb000000000100011bf"
+              },
+              {
+                "id": "5c6defb600000000110263bd",
+                "label": "5c6defb600000000110263bd"
+              },
+              {
+                "id": "5c7a6f14000000001701dd33",
+                "label": "5c7a6f14000000001701dd33"
+              },
+              {
+                "id": "5c7ae78f000000001702e38e",
+                "label": "5c7ae78f000000001702e38e"
+              },
+              {
+                "id": "5c7ec99a000000001102860d",
+                "label": "5c7ec99a000000001102860d"
+              },
+              {
+                "id": "5c7f38ef0000000012017dd2",
+                "label": "5c7f38ef0000000012017dd2"
+              },
+              {
+                "id": "5c8183af000000001001b8a8",
+                "label": "5c8183af000000001001b8a8"
+              },
+              {
+                "id": "5c8b6d0c000000001102586c",
+                "label": "5c8b6d0c000000001102586c"
+              },
+              {
+                "id": "5c993309000000001603fbed",
+                "label": "5c993309000000001603fbed"
+              },
+              {
+                "id": "5cb0145e000000001602ed65",
+                "label": "5cb0145e000000001602ed65"
+              },
+              {
+                "id": "5cd6e9760000000016009370",
+                "label": "5cd6e9760000000016009370"
+              },
+              {
+                "id": "5cd978d1000000001702b5a0",
+                "label": "5cd978d1000000001702b5a0"
+              },
+              {
+                "id": "5d6f1c3d000000000100bb1e",
+                "label": "5d6f1c3d000000000100bb1e"
+              },
+              {
+                "id": "5d735b3100000000010058d8",
+                "label": "5d735b3100000000010058d8"
+              },
+              {
+                "id": "5e21c65c0000000001005fa9",
+                "label": "5e21c65c0000000001005fa9"
+              },
+              {
+                "id": "5f0b2b96000000000101d09b",
+                "label": "5f0b2b96000000000101d09b"
+              },
+              {
+                "id": "5fb8d108000000000101d997",
+                "label": "5fb8d108000000000101d997"
+              },
+              {
+                "id": "5fbe3d4d0000000001000f80",
+                "label": "5fbe3d4d0000000001000f80"
+              },
+              {
+                "id": "6051a5fc0000000001003527",
+                "label": "6051a5fc0000000001003527"
+              },
+              {
+                "id": "608e8a42000000000101eb0f",
+                "label": "608e8a42000000000101eb0f"
+              },
+              {
+                "id": "60c9f7f60000000001004b72",
+                "label": "60c9f7f60000000001004b72"
+              },
+              {
+                "id": "60d73b36000000002002dc93",
+                "label": "60d73b36000000002002dc93"
+              },
+              {
+                "id": "610d90730000000001009d51",
+                "label": "610d90730000000001009d51"
+              },
+              {
+                "id": "61a46b5300000000210216e2",
+                "label": "61a46b5300000000210216e2"
+              },
+              {
+                "id": "61e1883b0000000010006ee8",
+                "label": "61e1883b0000000010006ee8"
+              },
+              {
+                "id": "61fcf593000000002102bc90",
+                "label": "61fcf593000000002102bc90"
+              },
+              {
+                "id": "6207ac3d000000001000b278",
+                "label": "6207ac3d000000001000b278"
+              },
+              {
+                "id": "62085cc20000000010005521",
+                "label": "62085cc20000000010005521"
+              },
+              {
+                "id": "6241dd0d0000000021021f8e",
+                "label": "6241dd0d0000000021021f8e"
+              },
+              {
+                "id": "62ccf949000000000303de14",
+                "label": "62ccf949000000000303de14"
+              },
+              {
+                "id": "62da1ec8000000000e00d676",
+                "label": "62da1ec8000000000e00d676"
+              },
+              {
+                "id": "63f20c13000000001001f63c",
+                "label": "63f20c13000000001001f63c"
+              },
+              {
+                "id": "645bb31d000000001400cec3",
+                "label": "645bb31d000000001400cec3"
+              },
+              {
+                "id": "6466d093000000002b00aca8",
+                "label": "6466d093000000002b00aca8"
+              },
+              {
+                "id": "64a6118e000000000b01436c",
+                "label": "64a6118e000000000b01436c"
+              },
+              {
+                "id": "652970e6000000002b001112",
+                "label": "652970e6000000002b001112"
+              },
+              {
+                "id": "659bbdc800000000220171a6",
+                "label": "659bbdc800000000220171a6"
+              },
+              {
+                "id": "662862760000000003030e2d",
+                "label": "662862760000000003030e2d"
+              },
+              {
+                "id": "66a26a1d000000001d031ff5",
+                "label": "66a26a1d000000001d031ff5"
+              },
+              {
+                "id": "67dceec6000000000801446e",
+                "label": "67dceec6000000000801446e"
+              },
+              {
+                "id": "685f9f60000000001b0229be",
+                "label": "685f9f60000000001b0229be"
+              },
+              {
+                "id": "686caffa000000001b01aada",
+                "label": "686caffa000000001b01aada"
+              },
+              {
+                "id": "68d647f5000000002102caa1",
+                "label": "68d647f5000000002102caa1"
+              },
+              {
+                "id": "68fdc46f0000000037031312",
+                "label": "68fdc46f0000000037031312"
+              },
+              {
+                "id": "69ba336a00000000260037a9",
+                "label": "69ba336a00000000260037a9"
+              }
+            ],
+            "resource_ids": []
+          },
+          "source_id": "xhs",
+          "workbench_id": "xhs"
+        },
+        {
+          "account_id": "2",
+          "channel_account_id": "user:1:account:60d73b36000000002002dc93",
+          "channel_id": "workbench",
+          "channel_source_id": "xhs",
+          "id": "7e2306e7071295563f93c65b",
+          "name": "小桃先吃一口",
+          "operations": [
+            {
+              "available": true,
+              "id": "comment.reply",
+              "input_schema": {
+                "properties": {
+                  "note_id": {
+                    "type": "string"
+                  },
+                  "target_comment_id": {
+                    "type": "string"
+                  },
+                  "text": {
+                    "maxLength": 2000,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "note_id",
+                  "target_comment_id",
+                  "text"
+                ],
+                "type": "object"
+              },
+              "label": "comment.reply",
+              "reason": ""
+            },
+            {
+              "available": true,
+              "id": "content.analyze",
+              "input_schema": {
+                "properties": {
+                  "agent_id": {
+                    "type": "string"
+                  },
+                  "text": {
+                    "maxLength": 16000,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "agent_id",
+                  "text"
+                ],
+                "type": "object"
+              },
+              "label": "content.analyze",
+              "reason": ""
+            },
+            {
+              "available": true,
+              "id": "content.publish",
+              "input_schema": {
+                "anyOf": [
+                  {
+                    "required": [
+                      "publish_job_id"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "draft_id"
+                    ]
+                  }
+                ],
+                "properties": {
+                  "draft_id": {
+                    "type": "integer"
+                  },
+                  "publish_job_id": {
+                    "type": "integer"
+                  }
+                },
+                "type": "object"
+              },
+              "label": "content.publish",
+              "reason": ""
+            },
+            {
+              "available": true,
+              "id": "content.read",
+              "input_schema": {
+                "properties": {},
+                "type": "object"
+              },
+              "label": "content.read",
+              "reason": ""
+            },
+            {
+              "available": true,
+              "id": "conversation.read",
+              "input_schema": {
+                "properties": {},
+                "type": "object"
+              },
+              "label": "conversation.read",
+              "reason": ""
+            },
+            {
+              "available": false,
+              "id": "dm.initiate",
+              "input_schema": {
+                "properties": {},
+                "type": "object"
+              },
+              "label": "dm.initiate",
+              "reason": "没有受支持的主动私信入口"
+            },
+            {
+              "available": true,
+              "id": "dm.reply",
+              "input_schema": {
+                "properties": {
+                  "conversation_id": {
+                    "type": "string"
+                  },
+                  "instruction": {
+                    "maxLength": 2000,
+                    "type": "string"
+                  },
+                  "message_id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "conversation_id",
+                  "message_id"
+                ],
+                "type": "object"
+              },
+              "label": "dm.reply",
+              "reason": ""
+            },
+            {
+              "available": true,
+              "id": "draft.create",
+              "input_schema": {
+                "properties": {
+                  "body": {
+                    "maxLength": 16000,
+                    "type": "string"
+                  },
+                  "title": {
+                    "maxLength": 256,
+                    "type": "string"
+                  },
+                  "uploaded_asset_ids": {
+                    "items": {
+                      "type": "integer"
+                    },
+                    "type": "array"
+                  }
+                },
+                "required": [
+                  "title",
+                  "body"
+                ],
+                "type": "object"
+              },
+              "label": "draft.create",
+              "reason": ""
+            },
+            {
+              "available": true,
+              "id": "material.read",
+              "input_schema": {
+                "properties": {
+                  "publish_job_id": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "publish_job_id"
+                ],
+                "type": "object"
+              },
+              "label": "material.read",
+              "reason": ""
+            },
+            {
+              "available": true,
+              "id": "message.read",
+              "input_schema": {
+                "properties": {
+                  "conversation_id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "conversation_id"
+                ],
+                "type": "object"
+              },
+              "label": "message.read",
+              "reason": ""
+            },
+            {
+              "available": true,
+              "id": "profile.read",
+              "input_schema": {
+                "properties": {},
+                "type": "object"
+              },
+              "label": "profile.read",
+              "reason": ""
+            },
+            {
+              "available": true,
+              "id": "public.search",
+              "input_schema": {
+                "properties": {
+                  "keyword": {
+                    "maxLength": 200,
+                    "type": "string"
+                  },
+                  "page": {
+                    "maximum": 20,
+                    "minimum": 1,
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "keyword"
+                ],
+                "type": "object"
+              },
+              "label": "public.search",
+              "reason": ""
+            },
+            {
+              "available": false,
+              "id": "video.publish",
+              "input_schema": {
+                "properties": {},
+                "type": "object"
+              },
+              "label": "video.publish",
+              "reason": "视频发布未实现"
+            }
+          ],
+          "scope_options": {
+            "conversation_ids": [
+              {
+                "id": "5cd2ac18000000001200cf4b",
+                "label": "5cd2ac18000000001200cf4b"
+              }
+            ],
+            "resource_ids": [
+              {
+                "id": "1",
+                "label": "我和煎饼，至少有一个先碎了"
+              },
+              {
+                "id": "2",
+                "label": "背着书出门，捡了一片叶子回来"
+              },
+              {
+                "id": "3",
+                "label": "开衫穿了，腿忘记通知秋天了"
+              },
+              {
+                "id": "5",
+                "label": "散步一小时，包里别塞一天"
+              },
+              {
+                "id": "6",
+                "label": "桌面很整齐，本子却没地方摊"
+              },
+              {
+                "id": "7",
+                "label": "换季别把短袖一口气封箱"
+              },
+              {
+                "id": "8",
+                "label": "下班做饭，别先开蔬菜大会"
+              },
+              {
+                "id": "9",
+                "label": "洗衣机装得下，晾衣架未必"
+              }
+            ]
+          },
+          "source_id": "xhs",
+          "workbench_id": "xhs"
+        },
+        {
+          "account_id": "3326894759",
+          "channel_account_id": "3326894759",
+          "channel_id": "workbench",
+          "channel_source_id": "xianyu",
+          "id": "0f9c9414c9973e275cf8feb9",
+          "name": "liuyishou",
+          "operations": [
+            {
+              "available": true,
+              "id": "product.read",
+              "label": "读取商品缓存",
+              "parameters": [
+                "item_id?"
+              ],
+              "reason": ""
+            },
+            {
+              "available": true,
+              "id": "conversation.read",
+              "label": "读取会话缓存",
+              "parameters": [],
+              "reason": ""
+            },
+            {
+              "available": true,
+              "id": "message.read",
+              "label": "读取消息缓存",
+              "parameters": [
+                "conversation_id"
+              ],
+              "reason": ""
+            },
+            {
+              "available": true,
+              "id": "conversation.sync",
+              "label": "同步最近会话",
+              "parameters": [],
+              "reason": ""
+            },
+            {
+              "available": true,
+              "id": "message.history",
+              "label": "同步会话历史",
+              "parameters": [
+                "conversation_id",
+                "older?"
+              ],
+              "reason": ""
+            },
+            {
+              "available": true,
+              "id": "draft.create",
+              "label": "保存商品草稿",
+              "parameters": [
+                "description",
+                "price",
+                "media_ids",
+                "location_index",
+                "delivery?"
+              ],
+              "reason": ""
+            },
+            {
+              "available": true,
+              "id": "product.publish",
+              "label": "发布已有商品草稿",
+              "parameters": [
+                "draft_id"
+              ],
+              "reason": ""
+            },
+            {
+              "available": true,
+              "id": "dm.reply",
+              "label": "发送会话文字回复",
+              "parameters": [
+                "conversation_id",
+                "text"
+              ],
+              "reason": ""
+            },
+            {
+              "available": true,
+              "id": "dm.initiate",
+              "label": "主动创建商品咨询会话",
+              "parameters": [
+                "peer_id",
+                "item_id"
+              ],
+              "reason": ""
+            },
+            {
+              "available": true,
+              "id": "comment.reply",
+              "label": "回复商品评论",
+              "parameters": [
+                "item_id",
+                "comment_id",
+                "text"
+              ],
+              "reason": ""
+            },
+            {
+              "available": true,
+              "id": "reply.draft",
+              "label": "起草会话回复（不发送）",
+              "parameters": [
+                "conversation_id",
+                "text?"
+              ],
+              "reason": ""
+            },
+            {
+              "available": true,
+              "id": "content.analyze",
+              "label": "分析商品内容（不发布）",
+              "parameters": [
+                "item_id?",
+                "draft_description?",
+                "text?"
+              ],
+              "reason": ""
+            },
+            {
+              "available": false,
+              "id": "public.search",
+              "label": "公开搜索",
+              "parameters": [],
+              "reason": "真实平台接口尚未实现"
+            },
+            {
+              "available": false,
+              "id": "product.modify",
+              "label": "真实修改商品",
+              "parameters": [],
+              "reason": "真实平台接口尚未实现"
+            }
+          ],
+          "scope_options": {
+            "contact_ids": [
+              {
+                "id": "681714957",
+                "label": "用户 4957"
+              },
+              {
+                "id": "2203135865199",
+                "label": "用户 5199"
+              },
+              {
+                "id": "1015852111",
+                "label": "用户 2111"
+              },
+              {
+                "id": "0",
+                "label": "用户 0"
+              },
+              {
+                "id": "2217284154521",
+                "label": "快给ta一个评价吧～"
+              },
+              {
+                "id": "2216423836318",
+                "label": "小精灵啦"
+              },
+              {
+                "id": "2218229190162",
+                "label": "蚌埠哈哈"
+              },
+              {
+                "id": "2218229190162",
+                "label": "蚌埠哈哈"
+              },
+              {
+                "id": "2705134771",
+                "label": "猪猪卡劵"
+              },
+              {
+                "id": "2655661613",
+                "label": "快给ta一个评价吧～"
+              },
+              {
+                "id": "2218234985598",
+                "label": "用户 5598"
+              },
+              {
+                "id": "2218234985598",
+                "label": "快给ta一个评价吧～"
+              },
+              {
+                "id": "2212966852754",
+                "label": "用户 2754"
+              },
+              {
+                "id": "2219072310879",
+                "label": "快给ta一个评价吧～"
+              },
+              {
+                "id": "2215842643611",
+                "label": "我完成了评价"
+              },
+              {
+                "id": "2217991146777",
+                "label": "山姆全国开卡"
+              },
+              {
+                "id": "2218496583685",
+                "label": "五一是只猫"
+              },
+              {
+                "id": "2215952140505",
+                "label": "HJW330"
+              },
+              {
+                "id": "2208464011151",
+                "label": "停车场修行的笋壳鱼"
+              },
+              {
+                "id": "2795900695",
+                "label": "用户 0695"
+              },
+              {
+                "id": "3417601193",
+                "label": "用户 1193"
+              },
+              {
+                "id": "2214858510423",
+                "label": "x***0"
+              },
+              {
+                "id": "0",
+                "label": "用户 0"
+              },
+              {
+                "id": "2220818671319",
+                "label": "用户 1319"
+              },
+              {
+                "id": "1598360968",
+                "label": "莓莓星冰乐"
+              },
+              {
+                "id": "0",
+                "label": "用户 0"
+              },
+              {
+                "id": "2207595463553",
+                "label": "小李老师"
+              },
+              {
+                "id": "647185715",
+                "label": "tsinghuaedu"
+              },
+              {
+                "id": "0",
+                "label": "用户 0"
+              },
+              {
+                "id": "2946673087",
+                "label": "快给ta一个评价吧～"
+              },
+              {
+                "id": "0",
+                "label": "用户 0"
+              },
+              {
+                "id": "0",
+                "label": "用户 0"
+              },
+              {
+                "id": "2220008314796",
+                "label": "苹果教育优惠"
+              },
+              {
+                "id": "2787258992",
+                "label": "用户 8992"
+              },
+              {
+                "id": "2207512593726",
+                "label": "用户 3726"
+              },
+              {
+                "id": "2221904828915",
+                "label": "小未至x"
+              },
+              {
+                "id": "2216340368575",
+                "label": "五花肉不多油"
+              },
+              {
+                "id": "2924893506",
+                "label": "用户 3506"
+              },
+              {
+                "id": "2219528522079",
+                "label": "用户 2079"
+              },
+              {
+                "id": "2217226024339",
+                "label": "x***0"
+              },
+              {
+                "id": "2212683449958",
+                "label": "用户 9958"
+              },
+              {
+                "id": "2222068395834",
+                "label": "用户 5834"
+              },
+              {
+                "id": "0",
+                "label": "用户 0"
+              },
+              {
+                "id": "0",
+                "label": "用户 0"
+              },
+              {
+                "id": "0",
+                "label": "用户 0"
+              },
+              {
+                "id": "2270722552",
+                "label": "用户 2552"
+              },
+              {
+                "id": "0",
+                "label": "用户 0"
+              },
+              {
+                "id": "0",
+                "label": "用户 0"
+              },
+              {
+                "id": "2223202332036",
+                "label": "福来day"
+              },
+              {
+                "id": "0",
+                "label": "用户 0"
+              }
+            ],
+            "conversation_ids": [
+              {
+                "id": "40154663960",
+                "label": "用户 4957"
+              },
+              {
+                "id": "40175627111",
+                "label": "用户 5199"
+              },
+              {
+                "id": "40175755758",
+                "label": "用户 2111"
+              },
+              {
+                "id": "40350236778",
+                "label": "用户 0"
+              },
+              {
+                "id": "46585314853",
+                "label": "快给ta一个评价吧～"
+              },
+              {
+                "id": "46652861334",
+                "label": "小精灵啦"
+              },
+              {
+                "id": "46935780870",
+                "label": "蚌埠哈哈"
+              },
+              {
+                "id": "47003498611",
+                "label": "蚌埠哈哈"
+              },
+              {
+                "id": "47718622491",
+                "label": "猪猪卡劵"
+              },
+              {
+                "id": "47742925320",
+                "label": "快给ta一个评价吧～"
+              },
+              {
+                "id": "48886772839",
+                "label": "用户 5598"
+              },
+              {
+                "id": "48817855689",
+                "label": "快给ta一个评价吧～"
+              },
+              {
+                "id": "50138974463",
+                "label": "用户 2754"
+              },
+              {
+                "id": "50278024721",
+                "label": "快给ta一个评价吧～"
+              },
+              {
+                "id": "51655670758",
+                "label": "我完成了评价"
+              },
+              {
+                "id": "54189163344",
+                "label": "山姆全国开卡"
+              },
+              {
+                "id": "61587552127",
+                "label": "五一是只猫"
+              },
+              {
+                "id": "61360555846",
+                "label": "HJW330"
+              },
+              {
+                "id": "61685880075",
+                "label": "停车场修行的笋壳鱼"
+              },
+              {
+                "id": "61811775615",
+                "label": "用户 0695"
+              },
+              {
+                "id": "62495256775",
+                "label": "用户 1193"
+              },
+              {
+                "id": "62440434811",
+                "label": "x***0"
+              },
+              {
+                "id": "16708771327",
+                "label": "用户 0"
+              },
+              {
+                "id": "63533280134",
+                "label": "用户 1319"
+              },
+              {
+                "id": "63176455216",
+                "label": "莓莓星冰乐"
+              },
+              {
+                "id": "63578438452",
+                "label": "用户 0"
+              },
+              {
+                "id": "64259257017",
+                "label": "小李老师"
+              },
+              {
+                "id": "64258945620",
+                "label": "tsinghuaedu"
+              },
+              {
+                "id": "64365936256",
+                "label": "用户 0"
+              },
+              {
+                "id": "62631132932",
+                "label": "快给ta一个评价吧～"
+              },
+              {
+                "id": "65855601237",
+                "label": "用户 0"
+              },
+              {
+                "id": "64269727500",
+                "label": "用户 0"
+              },
+              {
+                "id": "67199106237",
+                "label": "苹果教育优惠"
+              },
+              {
+                "id": "66932878524",
+                "label": "用户 8992"
+              },
+              {
+                "id": "67042460513",
+                "label": "用户 3726"
+              },
+              {
+                "id": "67042612043",
+                "label": "小未至x"
+              },
+              {
+                "id": "66956413478",
+                "label": "五花肉不多油"
+              },
+              {
+                "id": "66933198545",
+                "label": "用户 3506"
+              },
+              {
+                "id": "66975517143",
+                "label": "用户 2079"
+              },
+              {
+                "id": "67191785403",
+                "label": "x***0"
+              },
+              {
+                "id": "66956133772",
+                "label": "用户 9958"
+              },
+              {
+                "id": "67484543626",
+                "label": "用户 5834"
+              },
+              {
+                "id": "67854457585",
+                "label": "用户 0"
+              },
+              {
+                "id": "45223608559",
+                "label": "用户 0"
+              },
+              {
+                "id": "44032779646",
+                "label": "用户 0"
+              },
+              {
+                "id": "60777581929",
+                "label": "用户 2552"
+              },
+              {
+                "id": "29416510012",
+                "label": "用户 0"
+              },
+              {
+                "id": "3253749408",
+                "label": "用户 0"
+              },
+              {
+                "id": "67779403080",
+                "label": "福来day"
+              },
+              {
+                "id": "67941954397",
+                "label": "用户 0"
+              }
+            ],
+            "resource_ids": [
+              {
+                "id": "1089891189407",
+                "label": "【转卡】莲塘玺悦城优格游泳馆次卡｜剩余61次｜有效期至 20"
+              },
+              {
+                "id": "1091575928137",
+                "label": "接口测试商品｜请勿下单｜仅验证发布功能"
+              },
+              {
+                "id": "2abd92b2651b43a7961161d99101d67e",
+                "label": "草稿 · 工作台发布功能验收测试，请勿下单。\n此草稿仅用于检查图片、描述、价格、配送和发布回执，不是真实出售的商品。"
+              }
+            ]
+          },
+          "source_id": "xianyu",
+          "workbench_id": "xianyu"
+        },
+        {
+          "account_id": "2223202332036",
+          "channel_account_id": "2223202332036",
+          "channel_id": "workbench",
+          "channel_source_id": "xianyu",
+          "id": "22a60517d21acd5198538a80",
+          "name": "福来day",
+          "operations": [
+            {
+              "available": true,
+              "id": "product.read",
+              "label": "读取商品缓存",
+              "parameters": [
+                "item_id?"
+              ],
+              "reason": ""
+            },
+            {
+              "available": true,
+              "id": "conversation.read",
+              "label": "读取会话缓存",
+              "parameters": [],
+              "reason": ""
+            },
+            {
+              "available": true,
+              "id": "message.read",
+              "label": "读取消息缓存",
+              "parameters": [
+                "conversation_id"
+              ],
+              "reason": ""
+            },
+            {
+              "available": true,
+              "id": "conversation.sync",
+              "label": "同步最近会话",
+              "parameters": [],
+              "reason": ""
+            },
+            {
+              "available": true,
+              "id": "message.history",
+              "label": "同步会话历史",
+              "parameters": [
+                "conversation_id",
+                "older?"
+              ],
+              "reason": ""
+            },
+            {
+              "available": true,
+              "id": "draft.create",
+              "label": "保存商品草稿",
+              "parameters": [
+                "description",
+                "price",
+                "media_ids",
+                "location_index",
+                "delivery?"
+              ],
+              "reason": ""
+            },
+            {
+              "available": true,
+              "id": "product.publish",
+              "label": "发布已有商品草稿",
+              "parameters": [
+                "draft_id"
+              ],
+              "reason": ""
+            },
+            {
+              "available": true,
+              "id": "dm.reply",
+              "label": "发送会话文字回复",
+              "parameters": [
+                "conversation_id",
+                "text"
+              ],
+              "reason": ""
+            },
+            {
+              "available": true,
+              "id": "dm.initiate",
+              "label": "主动创建商品咨询会话",
+              "parameters": [
+                "peer_id",
+                "item_id"
+              ],
+              "reason": ""
+            },
+            {
+              "available": true,
+              "id": "comment.reply",
+              "label": "回复商品评论",
+              "parameters": [
+                "item_id",
+                "comment_id",
+                "text"
+              ],
+              "reason": ""
+            },
+            {
+              "available": true,
+              "id": "reply.draft",
+              "label": "起草会话回复（不发送）",
+              "parameters": [
+                "conversation_id",
+                "text?"
+              ],
+              "reason": ""
+            },
+            {
+              "available": true,
+              "id": "content.analyze",
+              "label": "分析商品内容（不发布）",
+              "parameters": [
+                "item_id?",
+                "draft_description?",
+                "text?"
+              ],
+              "reason": ""
+            },
+            {
+              "available": false,
+              "id": "public.search",
+              "label": "公开搜索",
+              "parameters": [],
+              "reason": "真实平台接口尚未实现"
+            },
+            {
+              "available": false,
+              "id": "product.modify",
+              "label": "真实修改商品",
+              "parameters": [],
+              "reason": "真实平台接口尚未实现"
+            }
+          ],
+          "scope_options": {
+            "contact_ids": [
+              {
+                "id": "0",
+                "label": "用户 0"
+              },
+              {
+                "id": "0",
+                "label": "用户 0"
+              },
+              {
+                "id": "0",
+                "label": "用户 0"
+              },
+              {
+                "id": "0",
+                "label": "用户 0"
+              },
+              {
+                "id": "0",
+                "label": "用户 0"
+              },
+              {
+                "id": "2222068395834",
+                "label": "用户 5834"
+              },
+              {
+                "id": "3326894759",
+                "label": "liuyishou"
+              }
+            ],
+            "conversation_ids": [
+              {
+                "id": "67618895659",
+                "label": "用户 0"
+              },
+              {
+                "id": "67921746515",
+                "label": "用户 0"
+              },
+              {
+                "id": "67651998229",
+                "label": "用户 0"
+              },
+              {
+                "id": "67912553563",
+                "label": "用户 0"
+              },
+              {
+                "id": "68020840326",
+                "label": "用户 0"
+              },
+              {
+                "id": "67779027709",
+                "label": "用户 5834"
+              },
+              {
+                "id": "67779403080",
+                "label": "liuyishou"
+              }
+            ],
+            "resource_ids": []
+          },
+          "source_id": "xianyu",
+          "workbench_id": "xianyu"
+        }
+      ],
+      "social_effects_enabled": true,
+      "workbench_errors": []
+    },
+    "completion_criteria": [
+      "真实主页来源摘要"
+    ],
+    "constraints": "",
+    "created": 1791732249.1024122,
+    "deadline": 1791818649.1023767,
+    "delivery_type": "local_artifact",
+    "evidence": [
+      {
+        "action_id": "983de80b7f65413f89cdda1056717389",
+        "created": 1791732365.8768077,
+        "data": {
+          "content": "# leo 真实主页来源摘要\n\n来源：authenticated_platform_sdk。\n覆盖范围：current_authenticated_profile（authenticated profile）。\n来源证据：简报观察 b4be418ee916426b90dba232b5cc7e06。\n\n- 昵称：leo\n- 用户 ID：5cd2ac18000000001200cf4b\n- 简介：无人扶我青云志，我自踏雪至山巅\n- 性别：未知；原始 gender 为 0，含义未知。\n- 头像：未知；原始 avatar 为 null。\n- IP 所在地：未知；原始 ip_location 为 null。\n\n实际模型返回的可用事实摘要：主页昵称为 leo，简介为“无人扶我青云志，我自踏雪至山巅”。性别、头像和所在地信息未知。\n\n模型结果记录：观察 f42d2feeb9404e3d98f90a656f2975be，任务 ba62d292-280a-49ea-aba4-3d55ed48ed95。该结果为分析草稿，标记 requires_human=true；上述事实均由简报证据支持。未推断身份、性格或经历。\n",
+          "delivery": "local_artifact",
+          "draft": true,
+          "name": "leo-profile.md",
+          "sha256": "6c4f14ac5cc555a522656c963d8ddc4419798e44059627106b8ff383f13a0a04",
+          "source_evidence_ids": [
+            "b4be418ee916426b90dba232b5cc7e06"
+          ]
+        },
+        "id": "e01942704654456c8457283665bf5563",
+        "kind": "artifact",
+        "run_id": "5ea8d740f7a1428e870b777018f0d7cd"
+      }
+    ],
+    "grants": [
+      {
+        "account_id": "1",
+        "channel_id": "workbench",
+        "expires_at": 1791818649.1023705,
+        "operations": [
+          "content.analyze"
+        ],
+        "resource_id": "bc746c0e55f65f5f04a9be1e",
+        "scope": {},
+        "source_id": "xhs"
+      }
+    ],
+    "id": "5ea8d740f7a1428e870b777018f0d7cd",
+    "limits": {
+      "max_actions": 8
+    },
+    "main_issue_id": "01a12b90-7373-7421-8c42-7016a05b9e39",
+    "main_task_url": "https://d.58nft.net:9447/leo/issues/01a12b90-7373-7421-8c42-7016a05b9e39",
+    "next_check": 1791732380.9428627,
+    "objective": "First read_brief to observe the supplied actual owned Leo profile. Then business_task content.analyze for the sole granted Leo account with input agent_id da72f33e-cac4-4ff0-a99d-d415219f3efc and text containing only these actual profile facts. In the text explicitly request a concise factual Chinese profile summary; permit only reading this assigned Multica issue and its triggering context, forbid social writes, other account access, persona or memory modifications, and forbid any generated fictional experiences. After actual model result is returned, create leo-profile.md citing the brief observation and including nickname leo and authenticated profile; incorporate only usable factual model observations and mark unknowns unknown. Complete after artifact verification. Do not call other operations.",
+    "observations": [
+      {
+        "action_id": "e367fa0f602a46ee8ceff774836d52f8",
+        "created": 1791732281.7215912,
+        "data": {
+          "content": "{\"source\": \"authenticated_platform_sdk\", \"coverage\": \"current_authenticated_profile\", \"profile\": {\"avatar\": null, \"desc\": \"无人扶我青云志，我自踏雪至山巅\", \"gender\": 0, \"ip_location\": null, \"nickname\": \"leo\", \"user_id\": \"5cd2ac18000000001200cf4b\"}}",
+          "name": "goal_brief",
+          "source": "user_goal_brief"
+        },
+        "id": "b4be418ee916426b90dba232b5cc7e06",
+        "kind": "brief",
+        "run_id": "5ea8d740f7a1428e870b777018f0d7cd"
+      },
+      {
+        "action_id": null,
+        "created": 1791732299.2263844,
+        "data": {
+          "kind": "task.queued",
+          "payload": {
+            "account_id": 1,
+            "action_id": "506fa91517524a54ac397b6b5fd3f731",
+            "goal_id": "5ea8d740f7a1428e870b777018f0d7cd",
+            "operation": "content.analyze",
+            "project_id": "14cf5201-fb9e-4b08-93c3-3e61bfab3a1b"
+          },
+          "source": "authenticated_workbench_event",
+          "task_id": "ba62d292-280a-49ea-aba4-3d55ed48ed95",
+          "workbench": "xhs"
+        },
+        "id": "8348c38ee7f64686b546fefab4de7736",
+        "kind": "executor_feedback",
+        "run_id": "5ea8d740f7a1428e870b777018f0d7cd"
+      },
+      {
+        "action_id": null,
+        "created": 1791732299.2316847,
+        "data": {
+          "kind": "task.running",
+          "payload": {
+            "account_id": 1,
+            "action_id": "506fa91517524a54ac397b6b5fd3f731",
+            "goal_id": "5ea8d740f7a1428e870b777018f0d7cd",
+            "operation": "content.analyze",
+            "project_id": "14cf5201-fb9e-4b08-93c3-3e61bfab3a1b"
+          },
+          "source": "authenticated_workbench_event",
+          "task_id": "ba62d292-280a-49ea-aba4-3d55ed48ed95",
+          "workbench": "xhs"
+        },
+        "id": "df124e2127cb44ecac4babd0e49c12b3",
+        "kind": "executor_feedback",
+        "run_id": "5ea8d740f7a1428e870b777018f0d7cd"
+      },
+      {
+        "action_id": null,
+        "created": 1791732299.239645,
+        "data": {
+          "kind": "task.waiting_model",
+          "payload": {
+            "account_id": 1,
+            "action_id": "506fa91517524a54ac397b6b5fd3f731",
+            "error": "",
+            "goal_id": "5ea8d740f7a1428e870b777018f0d7cd",
+            "operation": "content.analyze",
+            "project_id": "14cf5201-fb9e-4b08-93c3-3e61bfab3a1b",
+            "result": {
+              "account_id": 1,
+              "coverage": "model_intermediate_only",
+              "data": {
+                "channel_event_id": "36083885-a11f-49fd-be38-a091c205619b"
+              },
+              "source": "channel_model_request"
+            }
+          },
+          "source": "authenticated_workbench_event",
+          "task_id": "ba62d292-280a-49ea-aba4-3d55ed48ed95",
+          "workbench": "xhs"
+        },
+        "id": "bb1273e53e05421c919c646b35869dca",
+        "kind": "executor_feedback",
+        "run_id": "5ea8d740f7a1428e870b777018f0d7cd"
+      },
+      {
+        "action_id": null,
+        "created": 1791732320.3456533,
+        "data": {
+          "kind": "task.succeeded",
+          "payload": {
+            "account_id": 1,
+            "action_id": "506fa91517524a54ac397b6b5fd3f731",
+            "error": "",
+            "goal_id": "5ea8d740f7a1428e870b777018f0d7cd",
+            "operation": "content.analyze",
+            "project_id": "14cf5201-fb9e-4b08-93c3-3e61bfab3a1b",
+            "result": {
+              "coverage": "analysis_draft_not_platform_action",
+              "data": {
+                "channel_event_id": "36083885-a11f-49fd-be38-a091c205619b",
+                "output": {
+                  "requires_human": true,
+                  "structured": {
+                    "labels": [],
+                    "reply": "主页昵称为 leo，简介为“无人扶我青云志，我自踏雪至山巅”。性别、头像和所在地信息未知。",
+                    "requires_human": true,
+                    "summary": "依据已观察的认证主页资料整理摘要；未推断未知信息。"
+                  },
+                  "text": "{\"reply\":\"主页昵称为 leo，简介为“无人扶我青云志，我自踏雪至山巅”。性别、头像和所在地信息未知。\",\"summary\":\"依据已观察的认证主页资料整理摘要；未推断未知信息。\",\"labels\":[],\"requires_human\":true}"
+                }
+              },
+              "source": "model_intermediate"
+            }
+          },
+          "source": "authenticated_workbench_event",
+          "task_id": "ba62d292-280a-49ea-aba4-3d55ed48ed95",
+          "workbench": "xhs"
+        },
+        "id": "5bc6d1e74acb43d7b099ae5c3732e1aa",
+        "kind": "executor_feedback",
+        "run_id": "5ea8d740f7a1428e870b777018f0d7cd"
+      },
+      {
+        "action_id": "506fa91517524a54ac397b6b5fd3f731",
+        "created": 1791732320.6660252,
+        "data": {
+          "action_id": "506fa91517524a54ac397b6b5fd3f731",
+          "receipt": {
+            "business_task_id": "ba62d292-280a-49ea-aba4-3d55ed48ed95",
+            "evidence": {
+              "error": "",
+              "result": {
+                "coverage": "analysis_draft_not_platform_action",
+                "data": {
+                  "channel_event_id": "36083885-a11f-49fd-be38-a091c205619b",
+                  "output": {
+                    "requires_human": true,
+                    "structured": {
+                      "labels": [],
+                      "reply": "主页昵称为 leo，简介为“无人扶我青云志，我自踏雪至山巅”。性别、头像和所在地信息未知。",
+                      "requires_human": true,
+                      "summary": "依据已观察的认证主页资料整理摘要；未推断未知信息。"
+                    },
+                    "text": "{\"reply\":\"主页昵称为 leo，简介为“无人扶我青云志，我自踏雪至山巅”。性别、头像和所在地信息未知。\",\"summary\":\"依据已观察的认证主页资料整理摘要；未推断未知信息。\",\"labels\":[],\"requires_human\":true}"
+                  }
+                },
+                "source": "model_intermediate"
+              },
+              "source": "authenticated_workbench_business_task",
+              "task_id": "ba62d292-280a-49ea-aba4-3d55ed48ed95"
+            },
+            "operation": "content.analyze",
+            "pending": false,
+            "resource_id": "bc746c0e55f65f5f04a9be1e",
+            "status": "executed",
+            "task_state": "succeeded",
+            "workbench_id": "xhs"
+          }
+        },
+        "id": "f42d2feeb9404e3d98f90a656f2975be",
+        "kind": "business_intermediate",
+        "run_id": "5ea8d740f7a1428e870b777018f0d7cd"
+      },
+      {
+        "action_id": "506fa91517524a54ac397b6b5fd3f731",
+        "created": 1791732320.6686068,
+        "data": {
+          "action_id": "506fa91517524a54ac397b6b5fd3f731",
+          "receipt": {
+            "business_task_id": "ba62d292-280a-49ea-aba4-3d55ed48ed95",
+            "evidence": {
+              "error": "",
+              "result": {
+                "coverage": "analysis_draft_not_platform_action",
+                "data": {
+                  "channel_event_id": "36083885-a11f-49fd-be38-a091c205619b",
+                  "output": {
+                    "requires_human": true,
+                    "structured": {
+                      "labels": [],
+                      "reply": "主页昵称为 leo，简介为“无人扶我青云志，我自踏雪至山巅”。性别、头像和所在地信息未知。",
+                      "requires_human": true,
+                      "summary": "依据已观察的认证主页资料整理摘要；未推断未知信息。"
+                    },
+                    "text": "{\"reply\":\"主页昵称为 leo，简介为“无人扶我青云志，我自踏雪至山巅”。性别、头像和所在地信息未知。\",\"summary\":\"依据已观察的认证主页资料整理摘要；未推断未知信息。\",\"labels\":[],\"requires_human\":true}"
+                  }
+                },
+                "source": "model_intermediate"
+              },
+              "source": "authenticated_workbench_business_task",
+              "task_id": "ba62d292-280a-49ea-aba4-3d55ed48ed95"
+            },
+            "operation": "content.analyze",
+            "pending": false,
+            "resource_id": "bc746c0e55f65f5f04a9be1e",
+            "status": "executed",
+            "task_state": "succeeded",
+            "workbench_id": "xhs"
+          },
+          "status": "completed"
+        },
+        "id": "a3830f33613b426784c68af530348bc3",
+        "kind": "executor_feedback",
+        "run_id": "5ea8d740f7a1428e870b777018f0d7cd"
+      },
+      {
+        "action_id": "983de80b7f65413f89cdda1056717389",
+        "created": 1791732365.8768077,
+        "data": {
+          "content": "# leo 真实主页来源摘要\n\n来源：authenticated_platform_sdk。\n覆盖范围：current_authenticated_profile（authenticated profile）。\n来源证据：简报观察 b4be418ee916426b90dba232b5cc7e06。\n\n- 昵称：leo\n- 用户 ID：5cd2ac18000000001200cf4b\n- 简介：无人扶我青云志，我自踏雪至山巅\n- 性别：未知；原始 gender 为 0，含义未知。\n- 头像：未知；原始 avatar 为 null。\n- IP 所在地：未知；原始 ip_location 为 null。\n\n实际模型返回的可用事实摘要：主页昵称为 leo，简介为“无人扶我青云志，我自踏雪至山巅”。性别、头像和所在地信息未知。\n\n模型结果记录：观察 f42d2feeb9404e3d98f90a656f2975be，任务 ba62d292-280a-49ea-aba4-3d55ed48ed95。该结果为分析草稿，标记 requires_human=true；上述事实均由简报证据支持。未推断身份、性格或经历。\n",
+          "delivery": "local_artifact",
+          "draft": true,
+          "name": "leo-profile.md",
+          "sha256": "6c4f14ac5cc555a522656c963d8ddc4419798e44059627106b8ff383f13a0a04",
+          "source_evidence_ids": [
+            "b4be418ee916426b90dba232b5cc7e06"
+          ]
+        },
+        "id": "e01942704654456c8457283665bf5563",
+        "kind": "artifact",
+        "run_id": "5ea8d740f7a1428e870b777018f0d7cd"
+      }
+    ],
+    "project_id": "14cf5201-fb9e-4b08-93c3-3e61bfab3a1b",
+    "project_url": "https://d.58nft.net:9447/leo/projects/14cf5201-fb9e-4b08-93c3-3e61bfab3a1b",
+    "revision": 0,
+    "source_material": "{\"source\": \"authenticated_platform_sdk\", \"coverage\": \"current_authenticated_profile\", \"profile\": {\"avatar\": null, \"desc\": \"无人扶我青云志，我自踏雪至山巅\", \"gender\": 0, \"ip_location\": null, \"nickname\": \"leo\", \"user_id\": \"5cd2ac18000000001200cf4b\"}}",
+    "status": "completed",
+    "summary": "完成 Leo 真实主页摘要产物验收。",
+    "title": "Leo生产模型任务正文只读验收",
+    "updated": 1791732378.9431558
+  },
+  "business_tasks": [
+    {
+      "account_id": 1,
+      "action_id": "506fa91517524a54ac397b6b5fd3f731",
+      "authorization_revision": 0,
+      "goal_id": "5ea8d740f7a1428e870b777018f0d7cd",
+      "input": {
+        "agent_id": "da72f33e-cac4-4ff0-a99d-d415219f3efc",
+        "text": "请根据以下已观察的实际主页资料，返回简洁、事实性的中文主页摘要。来源为 authenticated_platform_sdk，覆盖范围为 current_authenticated_profile（authenticated profile）；nickname：leo；user_id：5cd2ac18000000001200cf4b；desc：无人扶我青云志，我自踏雪至山巅；gender 原始值：0，其含义未知；avatar：null；ip_location：null。空值对应信息标记为未知，不推断性别、所在地、身份、性格或经历。权限仅限读取本次分配的 Multica issue 01a12b90-7373-7421-8c42-7016a05b9e39 及其触发上下文；禁止社交写入、访问其他账号、修改 persona 或 memory，禁止生成任何虚构经历。仅使用上述实际资料事实，不调用其他操作。"
+      },
+      "operation": "content.analyze",
+      "origin": "headquarters",
+      "project_id": "14cf5201-fb9e-4b08-93c3-3e61bfab3a1b",
+      "request_id": "506fa91517524a54ac397b6b5fd3f731",
+      "id": "ba62d292-280a-49ea-aba4-3d55ed48ed95",
+      "state": "succeeded",
+      "status": "succeeded",
+      "result": {
+        "coverage": "analysis_draft_not_platform_action",
+        "data": {
+          "channel_event_id": "36083885-a11f-49fd-be38-a091c205619b",
+          "output": {
+            "requires_human": true,
+            "structured": {
+              "labels": [],
+              "reply": "主页昵称为 leo，简介为“无人扶我青云志，我自踏雪至山巅”。性别、头像和所在地信息未知。",
+              "requires_human": true,
+              "summary": "依据已观察的认证主页资料整理摘要；未推断未知信息。"
+            },
+            "text": "{\"reply\":\"主页昵称为 leo，简介为“无人扶我青云志，我自踏雪至山巅”。性别、头像和所在地信息未知。\",\"summary\":\"依据已观察的认证主页资料整理摘要；未推断未知信息。\",\"labels\":[],\"requires_human\":true}"
+          }
+        },
+        "source": "model_intermediate"
+      },
+      "error": "",
+      "created_at": 1791732294.7691543,
+      "updated_at": 1791732316.1632218
+    }
+  ],
+  "project_readback": {
+    "project_id": "14cf5201-fb9e-4b08-93c3-3e61bfab3a1b",
+    "main_issue_project_id": "14cf5201-fb9e-4b08-93c3-3e61bfab3a1b"
+  },
+  "four_account_catalog": [
+    {
+      "name": "leo",
+      "platform": "xhs",
+      "account_id": "1",
+      "operations": [
+        {
+          "available": true,
+          "id": "comment.reply",
+          "input_schema": {
+            "properties": {
+              "note_id": {
+                "type": "string"
+              },
+              "target_comment_id": {
+                "type": "string"
+              },
+              "text": {
+                "maxLength": 2000,
+                "type": "string"
+              }
+            },
+            "required": [
+              "note_id",
+              "target_comment_id",
+              "text"
+            ],
+            "type": "object"
+          },
+          "label": "comment.reply",
+          "reason": ""
+        },
+        {
+          "available": true,
+          "id": "content.analyze",
+          "input_schema": {
+            "properties": {
+              "agent_id": {
+                "type": "string"
+              },
+              "text": {
+                "maxLength": 16000,
+                "type": "string"
+              }
+            },
+            "required": [
+              "agent_id",
+              "text"
+            ],
+            "type": "object"
+          },
+          "label": "content.analyze",
+          "reason": ""
+        },
+        {
+          "available": false,
+          "id": "content.publish",
+          "input_schema": {
+            "anyOf": [
+              {
+                "required": [
+                  "publish_job_id"
+                ]
+              },
+              {
+                "required": [
+                  "draft_id"
+                ]
+              }
+            ],
+            "properties": {
+              "draft_id": {
+                "type": "integer"
+              },
+              "publish_job_id": {
+                "type": "integer"
+              }
+            },
+            "type": "object"
+          },
+          "label": "content.publish",
+          "reason": "该PC账号尚无同owner同身份可用Creator会话"
+        },
+        {
+          "available": true,
+          "id": "content.read",
+          "input_schema": {
+            "properties": {},
+            "type": "object"
+          },
+          "label": "content.read",
+          "reason": ""
+        },
+        {
+          "available": true,
+          "id": "conversation.read",
+          "input_schema": {
+            "properties": {},
+            "type": "object"
+          },
+          "label": "conversation.read",
+          "reason": ""
+        },
+        {
+          "available": false,
+          "id": "dm.initiate",
+          "input_schema": {
+            "properties": {},
+            "type": "object"
+          },
+          "label": "dm.initiate",
+          "reason": "没有受支持的主动私信入口"
+        },
+        {
+          "available": false,
+          "id": "dm.reply",
+          "input_schema": {
+            "properties": {
+              "conversation_id": {
+                "type": "string"
+              },
+              "instruction": {
+                "maxLength": 2000,
+                "type": "string"
+              },
+              "message_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "conversation_id",
+              "message_id"
+            ],
+            "type": "object"
+          },
+          "label": "dm.reply",
+          "reason": "私信WebSocket尚未在线监听：syncing"
+        },
+        {
+          "available": true,
+          "id": "draft.create",
+          "input_schema": {
+            "properties": {
+              "body": {
+                "maxLength": 16000,
+                "type": "string"
+              },
+              "title": {
+                "maxLength": 256,
+                "type": "string"
+              },
+              "uploaded_asset_ids": {
+                "items": {
+                  "type": "integer"
+                },
+                "type": "array"
+              }
+            },
+            "required": [
+              "title",
+              "body"
+            ],
+            "type": "object"
+          },
+          "label": "draft.create",
+          "reason": ""
+        },
+        {
+          "available": true,
+          "id": "material.read",
+          "input_schema": {
+            "properties": {
+              "publish_job_id": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "publish_job_id"
+            ],
+            "type": "object"
+          },
+          "label": "material.read",
+          "reason": ""
+        },
+        {
+          "available": true,
+          "id": "message.read",
+          "input_schema": {
+            "properties": {
+              "conversation_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "conversation_id"
+            ],
+            "type": "object"
+          },
+          "label": "message.read",
+          "reason": ""
+        },
+        {
+          "available": true,
+          "id": "profile.read",
+          "input_schema": {
+            "properties": {},
+            "type": "object"
+          },
+          "label": "profile.read",
+          "reason": ""
+        },
+        {
+          "available": true,
+          "id": "public.search",
+          "input_schema": {
+            "properties": {
+              "keyword": {
+                "maxLength": 200,
+                "type": "string"
+              },
+              "page": {
+                "maximum": 20,
+                "minimum": 1,
+                "type": "integer"
+              }
+            },
+            "required": [
+              "keyword"
+            ],
+            "type": "object"
+          },
+          "label": "public.search",
+          "reason": ""
+        },
+        {
+          "available": false,
+          "id": "video.publish",
+          "input_schema": {
+            "properties": {},
+            "type": "object"
+          },
+          "label": "video.publish",
+          "reason": "视频发布未实现"
+        }
+      ]
+    },
+    {
+      "name": "小桃先吃一口",
+      "platform": "xhs",
+      "account_id": "2",
+      "operations": [
+        {
+          "available": true,
+          "id": "comment.reply",
+          "input_schema": {
+            "properties": {
+              "note_id": {
+                "type": "string"
+              },
+              "target_comment_id": {
+                "type": "string"
+              },
+              "text": {
+                "maxLength": 2000,
+                "type": "string"
+              }
+            },
+            "required": [
+              "note_id",
+              "target_comment_id",
+              "text"
+            ],
+            "type": "object"
+          },
+          "label": "comment.reply",
+          "reason": ""
+        },
+        {
+          "available": true,
+          "id": "content.analyze",
+          "input_schema": {
+            "properties": {
+              "agent_id": {
+                "type": "string"
+              },
+              "text": {
+                "maxLength": 16000,
+                "type": "string"
+              }
+            },
+            "required": [
+              "agent_id",
+              "text"
+            ],
+            "type": "object"
+          },
+          "label": "content.analyze",
+          "reason": ""
+        },
+        {
+          "available": true,
+          "id": "content.publish",
+          "input_schema": {
+            "anyOf": [
+              {
+                "required": [
+                  "publish_job_id"
+                ]
+              },
+              {
+                "required": [
+                  "draft_id"
+                ]
+              }
+            ],
+            "properties": {
+              "draft_id": {
+                "type": "integer"
+              },
+              "publish_job_id": {
+                "type": "integer"
+              }
+            },
+            "type": "object"
+          },
+          "label": "content.publish",
+          "reason": ""
+        },
+        {
+          "available": true,
+          "id": "content.read",
+          "input_schema": {
+            "properties": {},
+            "type": "object"
+          },
+          "label": "content.read",
+          "reason": ""
+        },
+        {
+          "available": true,
+          "id": "conversation.read",
+          "input_schema": {
+            "properties": {},
+            "type": "object"
+          },
+          "label": "conversation.read",
+          "reason": ""
+        },
+        {
+          "available": false,
+          "id": "dm.initiate",
+          "input_schema": {
+            "properties": {},
+            "type": "object"
+          },
+          "label": "dm.initiate",
+          "reason": "没有受支持的主动私信入口"
+        },
+        {
+          "available": true,
+          "id": "dm.reply",
+          "input_schema": {
+            "properties": {
+              "conversation_id": {
+                "type": "string"
+              },
+              "instruction": {
+                "maxLength": 2000,
+                "type": "string"
+              },
+              "message_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "conversation_id",
+              "message_id"
+            ],
+            "type": "object"
+          },
+          "label": "dm.reply",
+          "reason": ""
+        },
+        {
+          "available": true,
+          "id": "draft.create",
+          "input_schema": {
+            "properties": {
+              "body": {
+                "maxLength": 16000,
+                "type": "string"
+              },
+              "title": {
+                "maxLength": 256,
+                "type": "string"
+              },
+              "uploaded_asset_ids": {
+                "items": {
+                  "type": "integer"
+                },
+                "type": "array"
+              }
+            },
+            "required": [
+              "title",
+              "body"
+            ],
+            "type": "object"
+          },
+          "label": "draft.create",
+          "reason": ""
+        },
+        {
+          "available": true,
+          "id": "material.read",
+          "input_schema": {
+            "properties": {
+              "publish_job_id": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "publish_job_id"
+            ],
+            "type": "object"
+          },
+          "label": "material.read",
+          "reason": ""
+        },
+        {
+          "available": true,
+          "id": "message.read",
+          "input_schema": {
+            "properties": {
+              "conversation_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "conversation_id"
+            ],
+            "type": "object"
+          },
+          "label": "message.read",
+          "reason": ""
+        },
+        {
+          "available": true,
+          "id": "profile.read",
+          "input_schema": {
+            "properties": {},
+            "type": "object"
+          },
+          "label": "profile.read",
+          "reason": ""
+        },
+        {
+          "available": true,
+          "id": "public.search",
+          "input_schema": {
+            "properties": {
+              "keyword": {
+                "maxLength": 200,
+                "type": "string"
+              },
+              "page": {
+                "maximum": 20,
+                "minimum": 1,
+                "type": "integer"
+              }
+            },
+            "required": [
+              "keyword"
+            ],
+            "type": "object"
+          },
+          "label": "public.search",
+          "reason": ""
+        },
+        {
+          "available": false,
+          "id": "video.publish",
+          "input_schema": {
+            "properties": {},
+            "type": "object"
+          },
+          "label": "video.publish",
+          "reason": "视频发布未实现"
+        }
+      ]
+    },
+    {
+      "name": "liuyishou",
+      "platform": "xianyu",
+      "account_id": "3326894759",
+      "operations": [
+        {
+          "available": true,
+          "id": "product.read",
+          "label": "读取商品缓存",
+          "parameters": [
+            "item_id?"
+          ],
+          "reason": ""
+        },
+        {
+          "available": true,
+          "id": "conversation.read",
+          "label": "读取会话缓存",
+          "parameters": [],
+          "reason": ""
+        },
+        {
+          "available": true,
+          "id": "message.read",
+          "label": "读取消息缓存",
+          "parameters": [
+            "conversation_id"
+          ],
+          "reason": ""
+        },
+        {
+          "available": true,
+          "id": "conversation.sync",
+          "label": "同步最近会话",
+          "parameters": [],
+          "reason": ""
+        },
+        {
+          "available": true,
+          "id": "message.history",
+          "label": "同步会话历史",
+          "parameters": [
+            "conversation_id",
+            "older?"
+          ],
+          "reason": ""
+        },
+        {
+          "available": true,
+          "id": "draft.create",
+          "label": "保存商品草稿",
+          "parameters": [
+            "description",
+            "price",
+            "media_ids",
+            "location_index",
+            "delivery?"
+          ],
+          "reason": ""
+        },
+        {
+          "available": true,
+          "id": "product.publish",
+          "label": "发布已有商品草稿",
+          "parameters": [
+            "draft_id"
+          ],
+          "reason": ""
+        },
+        {
+          "available": true,
+          "id": "dm.reply",
+          "label": "发送会话文字回复",
+          "parameters": [
+            "conversation_id",
+            "text"
+          ],
+          "reason": ""
+        },
+        {
+          "available": true,
+          "id": "dm.initiate",
+          "label": "主动创建商品咨询会话",
+          "parameters": [
+            "peer_id",
+            "item_id"
+          ],
+          "reason": ""
+        },
+        {
+          "available": true,
+          "id": "comment.reply",
+          "label": "回复商品评论",
+          "parameters": [
+            "item_id",
+            "comment_id",
+            "text"
+          ],
+          "reason": ""
+        },
+        {
+          "available": true,
+          "id": "reply.draft",
+          "label": "起草会话回复（不发送）",
+          "parameters": [
+            "conversation_id",
+            "text?"
+          ],
+          "reason": ""
+        },
+        {
+          "available": true,
+          "id": "content.analyze",
+          "label": "分析商品内容（不发布）",
+          "parameters": [
+            "item_id?",
+            "draft_description?",
+            "text?"
+          ],
+          "reason": ""
+        },
+        {
+          "available": false,
+          "id": "public.search",
+          "label": "公开搜索",
+          "parameters": [],
+          "reason": "真实平台接口尚未实现"
+        },
+        {
+          "available": false,
+          "id": "product.modify",
+          "label": "真实修改商品",
+          "parameters": [],
+          "reason": "真实平台接口尚未实现"
+        }
+      ]
+    },
+    {
+      "name": "福来day",
+      "platform": "xianyu",
+      "account_id": "2223202332036",
+      "operations": [
+        {
+          "available": true,
+          "id": "product.read",
+          "label": "读取商品缓存",
+          "parameters": [
+            "item_id?"
+          ],
+          "reason": ""
+        },
+        {
+          "available": true,
+          "id": "conversation.read",
+          "label": "读取会话缓存",
+          "parameters": [],
+          "reason": ""
+        },
+        {
+          "available": true,
+          "id": "message.read",
+          "label": "读取消息缓存",
+          "parameters": [
+            "conversation_id"
+          ],
+          "reason": ""
+        },
+        {
+          "available": true,
+          "id": "conversation.sync",
+          "label": "同步最近会话",
+          "parameters": [],
+          "reason": ""
+        },
+        {
+          "available": true,
+          "id": "message.history",
+          "label": "同步会话历史",
+          "parameters": [
+            "conversation_id",
+            "older?"
+          ],
+          "reason": ""
+        },
+        {
+          "available": true,
+          "id": "draft.create",
+          "label": "保存商品草稿",
+          "parameters": [
+            "description",
+            "price",
+            "media_ids",
+            "location_index",
+            "delivery?"
+          ],
+          "reason": ""
+        },
+        {
+          "available": true,
+          "id": "product.publish",
+          "label": "发布已有商品草稿",
+          "parameters": [
+            "draft_id"
+          ],
+          "reason": ""
+        },
+        {
+          "available": true,
+          "id": "dm.reply",
+          "label": "发送会话文字回复",
+          "parameters": [
+            "conversation_id",
+            "text"
+          ],
+          "reason": ""
+        },
+        {
+          "available": true,
+          "id": "dm.initiate",
+          "label": "主动创建商品咨询会话",
+          "parameters": [
+            "peer_id",
+            "item_id"
+          ],
+          "reason": ""
+        },
+        {
+          "available": true,
+          "id": "comment.reply",
+          "label": "回复商品评论",
+          "parameters": [
+            "item_id",
+            "comment_id",
+            "text"
+          ],
+          "reason": ""
+        },
+        {
+          "available": true,
+          "id": "reply.draft",
+          "label": "起草会话回复（不发送）",
+          "parameters": [
+            "conversation_id",
+            "text?"
+          ],
+          "reason": ""
+        },
+        {
+          "available": true,
+          "id": "content.analyze",
+          "label": "分析商品内容（不发布）",
+          "parameters": [
+            "item_id?",
+            "draft_description?",
+            "text?"
+          ],
+          "reason": ""
+        },
+        {
+          "available": false,
+          "id": "public.search",
+          "label": "公开搜索",
+          "parameters": [],
+          "reason": "真实平台接口尚未实现"
+        },
+        {
+          "available": false,
+          "id": "product.modify",
+          "label": "真实修改商品",
+          "parameters": [],
+          "reason": "真实平台接口尚未实现"
+        }
+      ]
+    }
+  ]
+}

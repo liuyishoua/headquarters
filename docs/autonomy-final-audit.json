@@ -1,0 +1,300 @@
+{
+  "current_runtime": {
+    "authenticated_goal_api": 200,
+    "health": 200,
+    "planner_available": true,
+    "multica_available": true,
+    "execution_mode": "local_and_read",
+    "social_effects_enabled": false,
+    "accounts": [
+      {
+        "platform": "xianyu",
+        "name": "liuyishou",
+        "available": [
+          "product.read",
+          "conversation.read",
+          "message.read"
+        ],
+        "unavailable": [
+          {
+            "operation": "profile.read",
+            "reason": "本目标执行适配尚未接通"
+          },
+          {
+            "operation": "content.read",
+            "reason": "本目标执行适配尚未接通"
+          },
+          {
+            "operation": "public.search",
+            "reason": "公开搜索适配尚未接通"
+          },
+          {
+            "operation": "draft.create",
+            "reason": "本目标执行适配尚未接通"
+          },
+          {
+            "operation": "content.publish",
+            "reason": "本目标执行适配尚未接通"
+          },
+          {
+            "operation": "dm.reply",
+            "reason": "本目标执行适配尚未接通"
+          },
+          {
+            "operation": "comment.reply",
+            "reason": "本目标执行适配尚未接通"
+          },
+          {
+            "operation": "dm.initiate",
+            "reason": "本目标执行适配尚未接通"
+          },
+          {
+            "operation": "product.publish",
+            "reason": "本目标执行适配尚未接通"
+          },
+          {
+            "operation": "product.modify",
+            "reason": "本目标执行适配尚未接通"
+          }
+        ]
+      },
+      {
+        "platform": "xianyu",
+        "name": "福来day",
+        "available": [
+          "product.read",
+          "conversation.read",
+          "message.read"
+        ],
+        "unavailable": [
+          {
+            "operation": "profile.read",
+            "reason": "本目标执行适配尚未接通"
+          },
+          {
+            "operation": "content.read",
+            "reason": "本目标执行适配尚未接通"
+          },
+          {
+            "operation": "public.search",
+            "reason": "公开搜索适配尚未接通"
+          },
+          {
+            "operation": "draft.create",
+            "reason": "本目标执行适配尚未接通"
+          },
+          {
+            "operation": "content.publish",
+            "reason": "本目标执行适配尚未接通"
+          },
+          {
+            "operation": "dm.reply",
+            "reason": "本目标执行适配尚未接通"
+          },
+          {
+            "operation": "comment.reply",
+            "reason": "本目标执行适配尚未接通"
+          },
+          {
+            "operation": "dm.initiate",
+            "reason": "本目标执行适配尚未接通"
+          },
+          {
+            "operation": "product.publish",
+            "reason": "本目标执行适配尚未接通"
+          },
+          {
+            "operation": "product.modify",
+            "reason": "本目标执行适配尚未接通"
+          }
+        ]
+      },
+      {
+        "platform": "xhs",
+        "name": "leo",
+        "available": [
+          "profile.read",
+          "content.read"
+        ],
+        "unavailable": [
+          {
+            "operation": "product.read",
+            "reason": "账号连接未确认或目标执行适配尚未接通"
+          },
+          {
+            "operation": "conversation.read",
+            "reason": "账号连接未确认或目标执行适配尚未接通"
+          },
+          {
+            "operation": "message.read",
+            "reason": "账号连接未确认或目标执行适配尚未接通"
+          },
+          {
+            "operation": "public.search",
+            "reason": "账号连接未确认或目标执行适配尚未接通"
+          },
+          {
+            "operation": "draft.create",
+            "reason": "账号连接未确认或目标执行适配尚未接通"
+          },
+          {
+            "operation": "content.publish",
+            "reason": "账号连接未确认或目标执行适配尚未接通"
+          },
+          {
+            "operation": "dm.reply",
+            "reason": "账号连接未确认或目标执行适配尚未接通"
+          },
+          {
+            "operation": "comment.reply",
+            "reason": "账号连接未确认或目标执行适配尚未接通"
+          },
+          {
+            "operation": "dm.initiate",
+            "reason": "账号连接未确认或目标执行适配尚未接通"
+          },
+          {
+            "operation": "product.publish",
+            "reason": "账号连接未确认或目标执行适配尚未接通"
+          },
+          {
+            "operation": "product.modify",
+            "reason": "账号连接未确认或目标执行适配尚未接通"
+          }
+        ]
+      },
+      {
+        "platform": "xhs",
+        "name": "小桃先吃一口",
+        "available": [
+          "profile.read",
+          "content.read"
+        ],
+        "unavailable": [
+          {
+            "operation": "product.read",
+            "reason": "账号连接未确认或目标执行适配尚未接通"
+          },
+          {
+            "operation": "conversation.read",
+            "reason": "账号连接未确认或目标执行适配尚未接通"
+          },
+          {
+            "operation": "message.read",
+            "reason": "账号连接未确认或目标执行适配尚未接通"
+          },
+          {
+            "operation": "public.search",
+            "reason": "账号连接未确认或目标执行适配尚未接通"
+          },
+          {
+            "operation": "draft.create",
+            "reason": "账号连接未确认或目标执行适配尚未接通"
+          },
+          {
+            "operation": "content.publish",
+            "reason": "账号连接未确认或目标执行适配尚未接通"
+          },
+          {
+            "operation": "dm.reply",
+            "reason": "账号连接未确认或目标执行适配尚未接通"
+          },
+          {
+            "operation": "comment.reply",
+            "reason": "账号连接未确认或目标执行适配尚未接通"
+          },
+          {
+            "operation": "dm.initiate",
+            "reason": "账号连接未确认或目标执行适配尚未接通"
+          },
+          {
+            "operation": "product.publish",
+            "reason": "账号连接未确认或目标执行适配尚未接通"
+          },
+          {
+            "operation": "product.modify",
+            "reason": "账号连接未确认或目标执行适配尚未接通"
+          }
+        ]
+      }
+    ]
+  },
+  "native_model_goals": [
+    {
+      "domain": "market",
+      "saved_completed": true,
+      "project_status": "completed",
+      "main_status": "done",
+      "main_belongs_to_project": true,
+      "child_records": 6,
+      "children_project_link_valid": true,
+      "children_done": true,
+      "planner_chats": 3,
+      "planner_chats_project_link_valid": true,
+      "evidence_actions": [
+        [
+          "read_brief",
+          "completed"
+        ],
+        [
+          "write_artifact",
+          "completed"
+        ],
+        [
+          "complete",
+          "completed"
+        ]
+      ],
+      "restart_no_duplicate": true,
+      "artifact_checks_verified": true,
+      "artifact_storage": "isolated acceptance temporary directory; removed after test; saved report retains content and digest",
+      "supplied_brief_revision_verified": true
+    },
+    {
+      "domain": "research",
+      "saved_completed": true,
+      "project_status": "completed",
+      "main_status": "done",
+      "main_belongs_to_project": true,
+      "child_records": 6,
+      "children_project_link_valid": true,
+      "children_done": true,
+      "planner_chats": 3,
+      "planner_chats_project_link_valid": true,
+      "evidence_actions": [
+        [
+          "read_brief",
+          "completed"
+        ],
+        [
+          "write_artifact",
+          "completed"
+        ],
+        [
+          "complete",
+          "completed"
+        ]
+      ],
+      "restart_no_duplicate": true,
+      "artifact_checks_verified": true,
+      "artifact_storage": "isolated acceptance temporary directory; removed after test; saved report retains content and digest",
+      "supplied_brief_revision_verified": true
+    }
+  ],
+  "real_social_writes_performed": false,
+  "model_acceptance_scope": "Real Multica model, synthetic user-supplied briefs, local document delivery; no new external/platform experiment feedback or sales.",
+  "feedback_coverage": {
+    "mechanism": "Authenticated UI feedback appends user_feedback and moves active next_check to now; planner context includes observations. Pending Channel results are polled and become authenticated receipt observations.",
+    "tested": "API persistence/global pause; changed feedback permits refreshed read; new feedback wakes a timed wait and changes mocked next decision after restart; feedback never resumes paused goal.",
+    "not_proven": "Real model adjusting to a newly arriving external platform event; automatic inbound message-to-goal association; actual proactive social acquisition or buyer negotiation."
+  },
+  "final_focused_autonomy_tests": {
+    "passed": true,
+    "count": 28,
+    "synthetic_only": true,
+    "new_checks": [
+      "new user feedback wakes timed wait, survives restart, changes mocked next decision",
+      "feedback cannot resume paused goal"
+    ]
+  }
+}
